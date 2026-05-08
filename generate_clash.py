@@ -117,10 +117,21 @@ def process_files():
         try:
             with open('extra.yaml', 'r', encoding='utf-8') as s:
                 data = yaml.safe_load(s)
-                if data and 'proxies' in data:
+                if data and 'proxies' in data and 'proxy-groups' in data:
+                    # 1. 先找到“老司机”组里包含哪些节点名字
+                    target_names = []
+                    for group in data.get('proxy-groups', []):
+                        if group.get('name') == '老司机':
+                            target_names = group.get('proxies', [])
+                            break
+                    
+                    # 2. 只添加名字在“老司机”列表里的节点
                     for p in data['proxies']:
-                        p['name'] = f"Extra-{p.get('type')}-{len(unique_nodes)}"
-                        add_node(p)
+                        if p['name'] in target_names:
+                            # 保持原名或改名
+                            original_name = p['name']
+                            p['name'] = f"Extra-{original_name}"
+                            add_node(p)
         except: pass
 
 process_files()
