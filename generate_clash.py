@@ -79,26 +79,72 @@ def process_files():
                 add_node(node)
         except: pass
 
-    # 4. Sing-box (解析其中的 TUIC 节点)
-    for f in os.listdir('./singbox'):
-        try:
-            with open(f'./singbox/{f}', 'r') as s:
-                data = json.load(s)
-                for out in data.get('outbounds', []):
-                    if out['type'] == 'tuic':
-                        node = {
-                            "name": f"TUIC-{f}",
-                            "type": "tuic",
-                            "server": out['server'],
-                            "port": out['server_port'],
-                            "uuid": out['uuid'],
-                            "password": out['password'],
-                            "alpn": out['tls']['alpn'],
-                            "sni": out['tls']['server_name'],
-                            "skip-cert-verify": True
-                        }
-                        add_node(node)
-        except: pass
+    # 4. Sing-box (解析其中的 TUIC, Hysteria2, VLESS Reality 等节点)
+    singbox_path = './singbox'
+    if os.path.exists(singbox_path):
+        for f in os.listdir(singbox_path):
+            if not f.endswith('.json'): continue  # 只处理 .json 文件
+            try:
+                with open(os.path.join(singbox_path, f), 'r') as s:
+                    data = json.load(s)
+                    # 遍历 sing-box 的所有出站节点 (outbounds)
+                    for out in data.get('outbounds', []):
+                        
+                        # --- 处理 TUIC ---
+                        if out.get('type') == 'tuic':
+                            node = {
+                                "name": f"Singbox-TUIC-{f}-{out.get('tag', 'node')}",
+                                "type": "tuic",
+                                "server": out['server'],
+                                "port": out['server_port'],
+                                "uuid": out.get('uuid'),
+                                "password": out.get('password'),
+                                "alpn": out.get('tls', {}).get('alpn', ['h3']),
+                                "sni": out.get('tls', {}).get('server_name'),
+                                "skip-cert-verify": out.get('tls', {}).get('insecure', True),
+                                "congestion-controller": out.get("congestion_control", "bbr"),
+                                "udp-relay-mode": "native"
+                            }
+                            add_node(node)
+
+                        # --- 处理 Hysteria 2 ---
+                        elif out.get('type') == 'hysteria2':
+                            node = {
+                                "name": f"Singbox-Hys2-{f}-{out.get('tag', 'node')}",
+                                "type": "hysteria2",
+                                "server": out['server'],
+                                "port": out['server_port'],
+                                "password": out.get("password"),
+                                "sni": out.get('tls', {}).get('server_name'),
+                                "skip-cert-verify": out.get('tls', {}).get('insecure', True),
+                                "up": "10 Mbps",
+                                "down": "50 Mbps"
+                            }
+                            add_node(node)
+
+                        # --- 处理 VLESS Reality (针对 Mihomo) ---
+                        elif out.get('type') == 'vless':
+                            tls = out.get('tls', {})
+                            if tls.get('enabled') and tls.get('reality'):
+                                node = {
+                                    "name": f"Singbox-VLESS-{f}-{out.get('tag', 'node')}",
+                                    "type": "vless",
+                                    "server": out['server'],
+                                    "port": out['server_port'],
+                                    "uuid": out.get('users', [{}])[0].get('uuid'),
+                                    "cipher": "auto",
+                                    "tls": True,
+                                    "udp": True,
+                                    "servername": tls.get('server_name'),
+                                    "reality-opts": {
+                                        "public-key": tls.get('reality', {}).get('public_key'),
+                                        "short-id": tls.get('reality', {}).get('short_id', "")
+                                    },
+                                    "client-fingerprint": tls.get('utls', {}).get('fingerprint', 'chrome')
+                                }
+                                add_node(node)
+            except Exception as e:
+                print(f"解析 singbox/{f} 失败: {e}")
 
 process_files()
 
