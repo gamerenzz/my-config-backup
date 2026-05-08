@@ -68,6 +68,8 @@ proxies:
     public-key: kfw5DgkyKiovC3dzb-o2PUYnZPnbYvbx2IwERUv9czY
     short-id: 225e2cc8
   client-fingerprint: chrome
+  xhttp-opts:
+    path: 5cfc52bc-e701-4160-89df-930a0c040576-xh
 - name: VLESS-Reality-2.json
   type: vless
   server: 157.254.223.137
@@ -82,6 +84,8 @@ proxies:
     public-key: njrfRguP2WJFUtBH11bJTaIEfGIb28V7_Sahlhbldyw
     short-id: 54ffd503
   client-fingerprint: chrome
+  xhttp-opts:
+    path: /S6wHAExO
 - name: VLESS-Reality-4.json
   type: vless
   server: 2a14:7584:d097::a
@@ -96,6 +100,8 @@ proxies:
     public-key: 3HaD5Ztk3X4gi3aJLVesV6KSJTW2YGG-hvGD3ZumJkE
     short-id: fa789b2f5ff56959
   client-fingerprint: chrome
+  xhttp-opts:
+    path: /alvin9999.com
 - name: VLESS-Reality-1.json
   type: vless
   server: 118.166.29.38
@@ -110,6 +116,8 @@ proxies:
     public-key: z1_FVLAxN66t1373faq2D-BV8B7CyILrwc0vMiYw9Cc
     short-id: d3c7911a
   client-fingerprint: chrome
+  xhttp-opts:
+    path: /tvFTD707
 - name: Hysteria2-2.json
   type: hysteria2
   server: 157.254.223.43
