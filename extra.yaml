@@ -116,16 +116,6 @@ proxies:
     short-id: ''
   client-figerprint: chrome
 - name: 节点8
-  type: hysteria2
-  server: 2001:bc8:32d7:302::11
-  port: '20088'
-  password: dongtaiwang.com
-  fast-open: true
-  sni: apple.com
-  skip-cert-verify: true
-  up: 100 Mbps
-  down: 100 Mbps
-- name: 节点9
   type: vmess
   server: 2001:bc8:32d7:302::10
   uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
@@ -137,48 +127,45 @@ proxies:
   ws-opts:
     path: ''
     headers: {}
-- name: 节点10
+- name: 节点9
   type: vless
   server: 118.166.29.38
   uuid: b0a4c3bf-f170-46e2-8cef-7ed2fc2e6748
   port: 44965
   udp: true
   tls: true
+- name: 节点10
+  type: hysteria2
+  server: 2001:bc8:32d7:302::11
+  port: '20088'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: apple.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
 - name: 节点11
-  type: vmess
-  server: 104.21.238.35
-  uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
-  alterId: 0
-  port: 2086
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: github.com/Alvin9999
-    headers:
-      Host: ip19.9447609.xyz
-- name: 节点12
   type: vless
   server: 157.254.223.137
   uuid: 0b138cbd-73f2-482c-ac69-c4b2ebeb891d
   port: 24089
   udp: true
   tls: true
-- name: 节点13
+- name: 节点12
   type: vless
   server: 89.144.35.230
   uuid: 5cfc52bc-e701-4160-89df-930a0c040576
   port: 54582
   udp: true
   tls: true
-- name: 节点14
+- name: 节点13
   type: vless
   server: 2a14:7584:d097::a
   uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
   port: 11330
   udp: true
   tls: true
-- name: 节点15
+- name: 节点14
   type: hysteria
   server: 45.150.65.154
   port: 47119
@@ -191,7 +178,7 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点16
+- name: 节点15
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -204,7 +191,7 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点17
+- name: 节点16
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -217,6 +204,19 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip29.9447609.xyz
+- name: 节点17
+  type: vmess
+  server: 104.21.238.35
+  uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
+  alterId: 0
+  port: 2086
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: github.com/Alvin9999
+    headers:
+      Host: ip19.9447609.xyz
 - name: 节点18
   type: hysteria
   server: 2001:bc8:32d7:17b::2
