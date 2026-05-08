@@ -2,6 +2,8 @@ mixed-port: 7890
 allow-lan: true
 mode: rule
 log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
 proxies:
 - name: Clash-hysteria-0
   type: hysteria
@@ -137,6 +139,123 @@ proxies:
   skip-cert-verify: true
   congestion-controller: bbr
   udp-relay-mode: native
+- name: 🔞-visa.com
+  server: visa.com
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: less17.mc2kz.us.ci
+- name: 🔞-www.visa.com
+  server: www.visa.com
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: less17.mc2kz.us.ci
+- name: 🔞-www.visa.cn
+  server: www.visa.cn
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: less17.mc2kz.us.ci
+- name: 🔞-zoneabc.net
+  server: zoneabc.net
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: less17.mc2kz.us.ci
+- name: 🔞-youxuan.cf.090227.xyz
+  server: youxuan.cf.090227.xyz
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: less17.mc2kz.us.ci
+- name: 🔞-www.shopify.com
+  server: www.shopify.com
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: less17.mc2kz.us.ci
+- name: 🔞-store.ubi.com
+  server: store.ubi.com
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: less17.mc2kz.us.ci
+- name: 🔞-cf.tencentapp.cn
+  server: cf.tencentapp.cn
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: less17.mc2kz.us.ci
+- name: 🔞-cloudflare-dl.byoip.top
+  server: cloudflare-dl.byoip.top
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: less17.mc2kz.us.ci
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -154,7 +273,7 @@ proxy-groups:
   - Hys2-2.json
   - Singbox-TUIC-2.json-https://github.com/Alvin9999-newpac/fanqian
 - name: ♻️ 自动选择
-  type: fallback
+  type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
@@ -168,5 +287,27 @@ proxy-groups:
   - VLESS-Reality-1.json
   - Hys2-2.json
   - Singbox-TUIC-2.json-https://github.com/Alvin9999-newpac/fanqian
+- name: 🔞 老司机
+  type: url-test
+  url: https://www.google.com/generate_204
+  interval: 300
+  proxies:
+  - 🔞-visa.com
+  - 🔞-www.visa.com
+  - 🔞-www.visa.cn
+  - 🔞-zoneabc.net
+  - 🔞-youxuan.cf.090227.xyz
+  - 🔞-www.shopify.com
+  - 🔞-store.ubi.com
+  - 🔞-cf.tencentapp.cn
+  - 🔞-cloudflare-dl.byoip.top
+rule-providers:
+  adults:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/fireinrain/porndude-clash-rules/master/adults.txt
+    interval: 86400
+    format: text
 rules:
+- RULE-SET,adults,🔞 老司机
 - MATCH,🚀 节点选择
