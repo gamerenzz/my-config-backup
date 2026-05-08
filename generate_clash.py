@@ -13,27 +13,25 @@ def add_node(proxy):
     if key not in unique_nodes:
         unique_nodes[key] = proxy
 
-# 解析各个目录
 def process_files():
-    # 1. 原生 Clash 格式
-    clash_path = './clash'
-    if os.path.exists(clash_path):
-        for f in os.listdir(clash_path):
+    # 1. 解析原有下载的目录 (clash, xray, h2, singbox)
+    # --- Clash 目录 ---
+    if os.path.exists('./clash'):
+        for f in os.listdir('./clash'):
             try:
-                with open(os.path.join(clash_path, f), 'r') as s:
+                with open(f'./clash/{f}', 'r') as s:
                     data = yaml.safe_load(s)
                     if data and 'proxies' in data:
                         for p in data['proxies']:
-                            p['name'] = f"Clash-{p['type']}-{len(unique_nodes)}"
+                            p['name'] = f"Node-{len(unique_nodes)}"
                             add_node(p)
             except: pass
 
-    # 2. Xray (VLESS Reality) 增强版
-    xray_path = './xray'
-    if os.path.exists(xray_path):
-        for f in os.listdir(xray_path):
+    # --- Xray 目录 ---
+    if os.path.exists('./xray'):
+        for f in os.listdir('./xray'):
             try:
-                with open(os.path.join(xray_path, f), 'r') as s:
+                with open(f'./xray/{f}', 'r', encoding='utf-8') as s:
                     data = json.load(s)
                     out = data['outbounds'][0]
                     v = out['settings']['vnext'][0]
@@ -42,31 +40,22 @@ def process_files():
                     node = {
                         "name": f"VLESS-Reality-{f}",
                         "type": "vless",
-                        "server": v['address'],
-                        "port": v['port'],
-                        "uuid": v['users'][0]['id'],
-                        "cipher": "auto",
-                        "tls": True,
-                        "udp": True,
+                        "server": v['address'], "port": v['port'], "uuid": v['users'][0]['id'],
+                        "cipher": "auto", "tls": True, "udp": True,
                         "servername": ss['realitySettings']['serverName'],
                         "network": ss.get('network', 'tcp'),
-                        "reality-opts": {
-                            "public-key": ss['realitySettings']['publicKey'],
-                            "short-id": ss['realitySettings'].get('shortId', "")
-                        },
+                        "reality-opts": {"public-key": ss['realitySettings']['publicKey'], "short-id": ss['realitySettings'].get('shortId', "")},
                         "client-fingerprint": ss['realitySettings'].get('fingerprint', 'chrome')
                     }
-                    if ss.get('network') == 'xhttp':
-                        node["xhttp-opts"] = {"path": xpath}
+                    if ss.get('network') == 'xhttp': node["xhttp-opts"] = {"path": xpath}
                     add_node(node)
             except: pass
 
-    # 3. Hysteria 2
-    h2_path = './hysteria2'
-    if os.path.exists(h2_path):
-        for f in os.listdir(h2_path):
+    # --- Hysteria 2 目录 ---
+    if os.path.exists('./hysteria2'):
+        for f in os.listdir('./hysteria2'):
             try:
-                with open(os.path.join(h2_path, f), 'r') as s:
+                with open(f'./hysteria2/{f}', 'r') as s:
                     data = json.load(s)
                     addr_port = data['server'].split(',')[0].split(':')
                     node = {
@@ -81,46 +70,22 @@ def process_files():
                     add_node(node)
             except: pass
 
-    # 4. Sing-box (解析其中的 TUIC, Hysteria2, VLESS Reality 等节点)
-    singbox_path = './singbox'
-    if os.path.exists(singbox_path):
-        for f in os.listdir(singbox_path):
-            if not f.endswith('.json'): continue
-            try:
-                with open(os.path.join(singbox_path, f), 'r') as s:
-                    data = json.load(s)
-                    for out in data.get('outbounds', []):
-                        if out.get('type') == 'tuic':
-                            node = {
-                                "name": f"Singbox-TUIC-{f}-{out.get('tag', 'node')}",
-                                "type": "tuic",
-                                "server": out['server'],
-                                "port": out['server_port'],
-                                "uuid": out.get('uuid'),
-                                "password": out.get('password'),
-                                "alpn": out.get('tls', {}).get('alpn', ['h3']),
-                                "sni": out.get('tls', {}).get('server_name'),
-                                "skip-cert-verify": out.get('tls', {}).get('insecure', True),
-                                "congestion-controller": out.get("congestion_control", "bbr"),
-                                "udp-relay-mode": "native"
-                            }
-                            add_node(node)
-                        elif out.get('type') == 'hysteria2':
-                            node = {
-                                "name": f"Singbox-Hys2-{f}-{out.get('tag', 'node')}",
-                                "type": "hysteria2",
-                                "server": out['server'],
-                                "port": out['server_port'],
-                                "password": out.get("password"),
-                                "sni": out.get('tls', {}).get('server_name'),
-                                "skip-cert-verify": out.get('tls', {}).get('insecure', True)
-                            }
-                            add_node(node)
-            except: pass
+    # 2. --- 新增：解析 extra.yaml (来自 makou.cc.cd) ---
+    if os.path.exists('extra.yaml'):
+        try:
+            with open('extra.yaml', 'r', encoding='utf-8') as s:
+                data = yaml.safe_load(s)
+                if data and 'proxies' in data:
+                    for p in data['proxies']:
+                        # 重新给节点起名，避免冲突
+                        p['name'] = f"Extra-{p.get('type')}-{len(unique_nodes)}"
+                        add_node(p)
+        except Exception as e:
+            print(f"解析 extra.yaml 失败: {e}")
 
 process_files()
 
-# --- 1. 生成 Clash YAML ---
+# --- 3. 生成 Clash YAML (使用方法二：极简规则) ---
 dynamic_nodes = list(unique_nodes.values())
 dynamic_names = [p['name'] for p in dynamic_nodes]
 
@@ -135,8 +100,7 @@ template = {
         "enable": True,
         "listen": "0.0.0.0:1053",
         "enhanced-mode": "fake-ip",
-        "nameserver": ["223.5.5.5", "119.29.29.29"],
-        "fallback": ["8.8.8.8", "1.1.1.1"]
+        "nameserver": ["223.5.5.5", "119.29.29.29"]
     },
     "proxies": dynamic_nodes,
     "proxy-groups": [
@@ -147,20 +111,25 @@ template = {
         "DOMAIN-SUFFIX,cn,DIRECT",
         "GEOIP,LAN,DIRECT",
         "GEOIP,CN,DIRECT",
-        "MATCH,🚀 节点选择"  # 所有不属于国内的网站，包括成人网站，全部走这里
+        "MATCH,🚀 节点选择"
     ]
 }
+
 with open('sub.yaml', 'w', encoding='utf-8') as f:
     yaml.dump(template, f, allow_unicode=True, sort_keys=False)
 
-# --- 2. 生成 V2Ray 订阅 (Base64) ---
+# --- 4. 生成 V2Ray Base64 ---
 v2ray_links = []
 for node in dynamic_nodes:
-    name = urllib.parse.quote(node.get('name', 'node'))
+    name = urllib.parse.quote(node['name'])
     try:
         if node['type'] == 'vless':
-            path = urllib.parse.quote(node.get('xhttp-opts', {}).get('path', ''))
-            v2ray_links.append(f"vless://{node['uuid']}@{node['server']}:{node['port']}?security=reality&sni={node['servername']}&pbk={node['reality-opts']['public-key']}&sid={node['reality-opts']['short-id']}&type={node.get('network','tcp')}&path={path}#{name}")
+            if 'ws-opts' in node: # 处理 extra.yaml 里的优选节点
+                path = urllib.parse.quote(node['ws-opts']['path'])
+                v2ray_links.append(f"vless://{node['uuid']}@{node['server']}:{node['port']}?security=tls&sni={node.get('servername',node['server'])}&type=ws&path={path}#{name}")
+            else: # 处理 Reality 节点
+                path = urllib.parse.quote(node.get('xhttp-opts', {}).get('path', ''))
+                v2ray_links.append(f"vless://{node['uuid']}@{node['server']}:{node['port']}?security=reality&sni={node['servername']}&pbk={node['reality-opts']['public-key']}&sid={node['reality-opts']['short-id']}&type={node.get('network','tcp')}&path={path}#{name}")
         elif node['type'] == 'hysteria2':
             v2ray_links.append(f"hysteria2://{node['password']}@{node['server']}:{node['port']}?sni={node['sni']}&insecure=1#{name}")
         elif node['type'] == 'tuic':
@@ -168,8 +137,10 @@ for node in dynamic_nodes:
         elif node['type'] == 'hysteria':
             auth = node.get('auth-str') or node.get('auth_str', '')
             v2ray_links.append(f"hysteria://{node['server']}:{node['port']}?auth={auth}&sni={node['sni']}&alpn=h3&insecure=1#{name}")
+        elif node['type'] == 'vmess': # extra.yaml 里有 vmess
+            v2_data = {"v": "2", "ps": node['name'], "add": node['server'], "port": node['port'], "id": node['uuid'], "aid": node['alterId'], "net": node['network'], "type": "none", "host": node['ws-opts']['headers']['Host'], "path": node['ws-opts']['path'], "tls": "none"}
+            v2ray_links.append(f"vmess://{base64.b64encode(json.dumps(v2_data).encode()).decode()}#{name}")
     except: pass
 
 b64_content = base64.b64encode("\n".join(v2ray_links).encode('utf-8')).decode('utf-8')
-with open('v2ray.txt', 'w', encoding='utf-8') as f:
-    f.write(b64_content)
+with open('v2ray.txt', 'w', encoding='utf-8') as f: f.write(b64_content)
