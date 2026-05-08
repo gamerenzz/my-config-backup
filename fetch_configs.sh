@@ -1,37 +1,29 @@
 #!/bin/bash
-
-# 定义基础路径和目标文件夹的映射
-# 格式: "URL路径关键字|本地存储文件夹|文件后缀|数量"
-targets=(
-    "clash.meta2|clash|yaml|6"
-    "xray|xray|json|4"
-    "hysteria|hysteria|json|4"
-    "singbox|singbox|json|4"
-    "naiveproxy|naiveproxy|json|2"
-    "hysteria2|hysteria2|json|4"
-    "juicity|juicity|json|2"
-    "shadowquic|shadowquic|yaml|2"
-)
+# 创建存储目录
+mkdir -p clash xray hysteria hysteria2 singbox naiveproxy juicity shadowquic
 
 BASE_URL="https://www.gitlabip.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ipp"
 
-for item in "${targets[@]}"; do
-    IFS="|" read -r key folder ext count <<< "$item"
-    
-    # 创建文件夹
-    mkdir -p "$folder"
-    
+# 定义下载函数：目录名 数量 文件名
+download_files() {
+    local dir=$1
+    local count=$2
+    local filename=$3
     for i in $(seq 1 $count); do
-        # 特殊处理文件名（shadowquic 是 client.yaml，其他通常是 config.json/yaml）
-        filename="config.$ext"
-        if [ "$key" == "shadowquic" ]; then
-            filename="client.yaml"
-        fi
-
-        URL="$BASE_URL/$key/$i/$filename"
-        echo "正在下载: $URL"
-        
-        # 下载并保存，保存的文件名带上编号
-        curl -sL "$URL" -o "$folder/$i.$ext"
+        echo "下载 $dir/$i..."
+        curl -sL "$BASE_URL/$dir/$i/$filename" -o "$dir/$i.${filename##*.}"
     done
-done
+}
+
+# 开始下载
+download_files "clash.meta2" 6 "config.yaml"
+# 把下载的 clash.meta2 移动/改名到目标文件夹
+mv clash.meta2/* clash/ 2>/dev/null || true
+
+download_files "xray" 4 "config.json"
+download_files "hysteria" 4 "config.json"
+download_files "hysteria2" 4 "config.json"
+download_files "singbox" 4 "config.json"
+download_files "naiveproxy" 2 "config.json"
+download_files "juicity" 2 "config.json"
+download_files "shadowquic" 2 "client.yaml"
