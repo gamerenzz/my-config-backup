@@ -118,7 +118,7 @@ proxies:
   client-fingerprint: chrome
   xhttp-opts:
     path: /tvFTD707
-- name: Hysteria2-2.json
+- name: Hys2-2.json
   type: hysteria2
   server: 157.254.223.43
   port: 27921
@@ -151,7 +151,7 @@ proxy-groups:
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
   - VLESS-Reality-1.json
-  - Hysteria2-2.json
+  - Hys2-2.json
   - Singbox-TUIC-2.json-https://github.com/Alvin9999-newpac/fanqian
 - name: ♻️ 自动选择
   type: fallback
@@ -166,7 +166,7 @@ proxy-groups:
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
   - VLESS-Reality-1.json
-  - Hysteria2-2.json
+  - Hys2-2.json
   - Singbox-TUIC-2.json-https://github.com/Alvin9999-newpac/fanqian
 rules:
 - MATCH,🚀 节点选择
