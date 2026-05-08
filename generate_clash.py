@@ -140,13 +140,18 @@ template = {
     "proxies": all_nodes,
     "proxy-groups": [
         {"name": "🚀 节点选择", "type": "select", "proxies": ["♻️ 自动选择", "DIRECT"] + node_names},
-        {"name": "♻️ 自动选择", "type": "url-test", "url": "http://www.gstatic.com/generate_204", "interval": 300, "proxies": node_names}
+        {"name": "♻️ 自动选择", "type": "url-test", "url": "http://www.gstatic.com/generate_204", "interval": 300, "proxies": node_names},
+        # --- 新增的 UI 显示控制组 ---
+        {"name": "🛑 全球拦截", "type": "select", "proxies": ["REJECT", "DIRECT"]},
+        {"name": "🎯 全球直连", "type": "select", "proxies": ["DIRECT", "🚀 节点选择"]},
+        {"name": "🐟 漏网之鱼", "type": "select", "proxies": ["🚀 节点选择", "DIRECT", "♻️ 自动选择"]}
     ],
     "rules": [
-        "DOMAIN-SUFFIX,cn,DIRECT",
-        "GEOIP,LAN,DIRECT",
-        "GEOIP,CN,DIRECT",
-        "MATCH,🚀 节点选择"
+        "GEOSITE,category-ads-all,🛑 全球拦截",
+        "GEOSITE,cn,🎯 全球直连",
+        "GEOIP,LAN,🎯 全球直连",
+        "GEOIP,CN,🎯 全球直连",
+        "MATCH,🐟 漏网之鱼"
     ]
 }
 with open('sub.yaml', 'w', encoding='utf-8') as f:
