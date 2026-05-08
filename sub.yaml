@@ -11,11 +11,8 @@ dns:
   nameserver:
   - 223.5.5.5
   - 119.29.29.29
-  fallback:
-  - 8.8.8.8
-  - 1.1.1.1
 proxies:
-- name: Clash-hysteria-0
+- name: Node-0
   type: hysteria
   server: 2a14:7584:d097::a
   port: 54177
@@ -27,7 +24,7 @@ proxies:
   protocol: udp
   up: 11 Mbps
   down: 55 Mbps
-- name: Clash-tuic-1
+- name: Node-1
   server: 163.172.116.154
   port: 33887
   type: tuic
@@ -40,7 +37,7 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
-- name: Clash-tuic-2
+- name: Node-2
   server: 5.178.101.117
   port: 30006
   type: tuic
@@ -53,7 +50,7 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
-- name: Clash-tuic-3
+- name: Node-3
   server: ip1.758733.xyz
   port: 10088
   type: tuic
@@ -137,49 +134,321 @@ proxies:
   password: dongtaiwang.com
   sni: www.bing.com
   skip-cert-verify: true
-- name: Singbox-TUIC-2.json-https://github.com/Alvin9999-newpac/fanqian
-  type: tuic
-  server: 89.144.35.232
-  port: 17306
-  uuid: 3ebac90b-6977-47c0-bef5-b2e37554432c
-  password: 3ebac90b-6977-47c0-bef5-b2e37554432c
+- name: Extra-hysteria-9
+  type: hysteria
+  server: 2001:bc8:32d7:17b::2
+  port: '11000'
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: apple.com
+  skip-cert-verify: true
   alpn:
   - h3
+  recv_window_conn: 69206016
+  recv-window: 276824064
+- name: Extra-hysteria-10
+  type: hysteria
+  server: 5.83.129.153
+  port: '20088'
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  recv_window_conn: 69206016
+  recv-window: 276824064
+- name: Extra-hysteria-11
+  type: hysteria
+  server: 5.83.129.90
+  port: '54177'
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  recv_window_conn: 57671680
+  recv-window: 230686720
+- name: Extra-hysteria2-12
+  type: hysteria2
+  server: 2001:bc8:32d7:17b::8
+  port: '22000'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: apple.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
+- name: Extra-hysteria2-13
+  type: hysteria2
+  server: 2001:bc8:32d7:302::11
+  port: '20088'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: apple.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
+- name: Extra-hysteria2-14
+  type: hysteria2
+  server: 2001:bc8:32d7:17b::3
+  port: '22000'
+  password: dongtaiwang.com
+  fast-open: true
   sni: www.microsoft.com
   skip-cert-verify: true
-  congestion-controller: bbr
+  up: 100 Mbps
+  down: 100 Mbps
+- name: Extra-vless-15
+  type: vless
+  server: 2001:bc8:32d7:302::13
+  uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
+  port: 34324
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: dash.cloudflare.com
+  reality-opts:
+    public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
+    short-id: ''
+  client-figerprint: chrome
+- name: Extra-vmess-16
+  type: vmess
+  server: 104.21.238.35
+  uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
+  alterId: 0
+  port: 2086
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: github.com/Alvin9999
+    headers:
+      Host: ip29.9447609.xyz
+- name: Extra-vmess-17
+  type: vmess
+  server: 2001:bc8:32d7:302::10
+  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  alterId: 0
+  port: 44579
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: ''
+    headers: {}
+- name: Extra-hysteria-18
+  type: hysteria
+  server: 45.150.65.154
+  port: 47119
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: Extra-hysteria2-19
+  type: hysteria2
+  server: 2001:bc8:32d7:302::17
+  port: 20088
+  password: dongtaiwang.com
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  protocol: udp
+  up: 100
+  down: 100
+- name: Extra-tuic-20
+  server: 2001:bc8:32d7:302::16
+  port: 34997
+  type: tuic
+  uuid: 8687b6e0-ef24-4cd2-bcd2-02d3732bf554
+  password: dongtaiwang.com
+  alpn:
+  - h3
+  sni: bing.com
+  skip-cert-verify: true
+  reduce-rtt: true
   udp-relay-mode: native
+  congestion-controller: bbr
+- name: Extra-vless-21
+  server: visa.com
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts: &id001
+    path: /
+    headers:
+      Host: less17.mc2kz.us.ci
+- name: Extra-vless-22
+  server: www.visa.com
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts: *id001
+- name: Extra-vless-23
+  server: www.visa.cn
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts: *id001
+- name: Extra-vless-24
+  server: zoneabc.net
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts: *id001
+- name: Extra-vless-25
+  server: youxuan.cf.090227.xyz
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts: *id001
+- name: Extra-vless-26
+  server: www.shopify.com
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts: *id001
+- name: Extra-vless-27
+  server: store.ubi.com
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts: *id001
+- name: Extra-vless-28
+  server: cf.tencentapp.cn
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts: *id001
+- name: Extra-vless-29
+  server: cloudflare-dl.byoip.top
+  port: 443
+  type: vless
+  uuid: 2d9b713f-29d6-4d08-77fc-68035992bfc0
+  tls: true
+  skip-cert-verify: true
+  servername: less17.mc2kz.us.ci
+  network: ws
+  ws-opts: *id001
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - Clash-hysteria-0
-  - Clash-tuic-1
-  - Clash-tuic-2
-  - Clash-tuic-3
+  - Node-0
+  - Node-1
+  - Node-2
+  - Node-3
   - VLESS-Reality-3.json
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
   - VLESS-Reality-1.json
   - Hys2-2.json
-  - Singbox-TUIC-2.json-https://github.com/Alvin9999-newpac/fanqian
+  - Extra-hysteria-9
+  - Extra-hysteria-10
+  - Extra-hysteria-11
+  - Extra-hysteria2-12
+  - Extra-hysteria2-13
+  - Extra-hysteria2-14
+  - Extra-vless-15
+  - Extra-vmess-16
+  - Extra-vmess-17
+  - Extra-hysteria-18
+  - Extra-hysteria2-19
+  - Extra-tuic-20
+  - Extra-vless-21
+  - Extra-vless-22
+  - Extra-vless-23
+  - Extra-vless-24
+  - Extra-vless-25
+  - Extra-vless-26
+  - Extra-vless-27
+  - Extra-vless-28
+  - Extra-vless-29
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - Clash-hysteria-0
-  - Clash-tuic-1
-  - Clash-tuic-2
-  - Clash-tuic-3
+  - Node-0
+  - Node-1
+  - Node-2
+  - Node-3
   - VLESS-Reality-3.json
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
   - VLESS-Reality-1.json
   - Hys2-2.json
-  - Singbox-TUIC-2.json-https://github.com/Alvin9999-newpac/fanqian
+  - Extra-hysteria-9
+  - Extra-hysteria-10
+  - Extra-hysteria-11
+  - Extra-hysteria2-12
+  - Extra-hysteria2-13
+  - Extra-hysteria2-14
+  - Extra-vless-15
+  - Extra-vmess-16
+  - Extra-vmess-17
+  - Extra-hysteria-18
+  - Extra-hysteria2-19
+  - Extra-tuic-20
+  - Extra-vless-21
+  - Extra-vless-22
+  - Extra-vless-23
+  - Extra-vless-24
+  - Extra-vless-25
+  - Extra-vless-26
+  - Extra-vless-27
+  - Extra-vless-28
+  - Extra-vless-29
 rules:
 - DOMAIN-SUFFIX,cn,DIRECT
 - GEOIP,LAN,DIRECT
