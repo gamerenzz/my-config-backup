@@ -8,47 +8,84 @@ unique_nodes = {}
 
 def add_node(proxy):
     if not proxy or 'server' not in proxy: return
+    # 去重逻辑：基于 服务器、端口、协议类型
     key = f"{proxy.get('server')}:{proxy.get('port')}:{proxy.get('type')}"
     if key not in unique_nodes:
         unique_nodes[key] = proxy
 
 def process_files():
-    # 1. 解析原有下载的目录 (Alvin9999 的源)
-    directories = ['./clash', './xray', './hysteria2', './singbox']
-    for directory in directories:
-        if os.path.exists(directory):
-            for f in os.listdir(directory):
-                # ... 这里保留你之前 185 行版本中对各个文件夹的详细解析逻辑 ...
-                # 为了篇幅，此处省略具体的 try-except 块，请保持原样
-                pass
+    # 1. 解析原有下载的目录 (clash, xray, h2, singbox)
+    # --- Clash 目录 ---
+    if os.path.exists('./clash'):
+        for f in os.listdir('./clash'):
+            try:
+                with open(f'./clash/{f}', 'r') as s:
+                    data = yaml.safe_load(s)
+                    if data and 'proxies' in data:
+                        for p in data['proxies']:
+                            p['name'] = f"Node-{len(unique_nodes)}"
+                            add_node(p)
+            except: pass
 
-    # 2. --- 精准提取 extra.yaml 里的“老司机”节点 ---
+    # --- Xray 目录 ---
+    if os.path.exists('./xray'):
+        for f in os.listdir('./xray'):
+            try:
+                with open(f'./xray/{f}', 'r', encoding='utf-8') as s:
+                    data = json.load(s)
+                    out = data['outbounds'][0]
+                    v = out['settings']['vnext'][0]
+                    ss = out['streamSettings']
+                    xpath = ss.get('xhttpSettings', {}).get('path') or ss.get('wsSettings', {}).get('path')
+                    node = {
+                        "name": f"VLESS-Reality-{f}",
+                        "type": "vless",
+                        "server": v['address'], "port": v['port'], "uuid": v['users'][0]['id'],
+                        "cipher": "auto", "tls": True, "udp": True,
+                        "servername": ss['realitySettings']['serverName'],
+                        "network": ss.get('network', 'tcp'),
+                        "reality-opts": {"public-key": ss['realitySettings']['publicKey'], "short-id": ss['realitySettings'].get('shortId', "")},
+                        "client-fingerprint": ss['realitySettings'].get('fingerprint', 'chrome')
+                    }
+                    if ss.get('network') == 'xhttp': node["xhttp-opts"] = {"path": xpath}
+                    add_node(node)
+            except: pass
+
+    # --- Hysteria 2 目录 ---
+    if os.path.exists('./hysteria2'):
+        for f in os.listdir('./hysteria2'):
+            try:
+                with open(f'./hysteria2/{f}', 'r') as s:
+                    data = json.load(s)
+                    addr_port = data['server'].split(',')[0].split(':')
+                    node = {
+                        "name": f"Hys2-{f}",
+                        "type": "hysteria2",
+                        "server": addr_port[0].replace('[','').replace(']',''),
+                        "port": int(addr_port[1]),
+                        "password": data.get("auth"),
+                        "sni": data['tls']['sni'],
+                        "skip-cert-verify": True
+                    }
+                    add_node(node)
+            except: pass
+
+    # 2. --- 新增：解析 extra.yaml (来自 makou.cc.cd) ---
     if os.path.exists('extra.yaml'):
         try:
             with open('extra.yaml', 'r', encoding='utf-8') as s:
                 data = yaml.safe_load(s)
-                
-                # 第一步：先找到“老司机”这个组包含哪些节点名称
-                target_node_names = []
-                for group in data.get('proxy-groups', []):
-                    if group.get('name') == '老司机':
-                        target_node_names = group.get('proxies', [])
-                        break
-                
-                # 第二步：只提取这些指定名称的节点
                 if data and 'proxies' in data:
                     for p in data['proxies']:
-                        if p.get('name') in target_node_names:
-                            # 修改名称前缀，方便识别
-                            p['name'] = f"优选-{p.get('type')}-{len(unique_nodes)}"
-                            add_node(p)
-                            
+                        # 重新给节点起名，避免冲突
+                        p['name'] = f"Extra-{p.get('type')}-{len(unique_nodes)}"
+                        add_node(p)
         except Exception as e:
-            print(f"解析 extra.yaml 优选节点失败: {e}")
+            print(f"解析 extra.yaml 失败: {e}")
 
 process_files()
 
-# --- 3. 生成 Clash YAML (极简规则) ---
+# --- 3. 生成 Clash YAML (使用方法二：极简规则) ---
 dynamic_nodes = list(unique_nodes.values())
 dynamic_names = [p['name'] for p in dynamic_nodes]
 
@@ -80,7 +117,6 @@ template = {
 
 with open('sub.yaml', 'w', encoding='utf-8') as f:
     yaml.dump(template, f, allow_unicode=True, sort_keys=False)
-
 
 # --- 4. 生成 V2Ray Base64 ---
 v2ray_links = []
