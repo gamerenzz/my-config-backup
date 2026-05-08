@@ -32,18 +32,32 @@ def process_files():
                 out = data['outbounds'][0]
                 v = out['settings']['vnext'][0]
                 ss = out['streamSettings']
+                
+                # 提取 path
+                xpath = ss.get('xhttpSettings', {}).get('path') or ss.get('wsSettings', {}).get('path')
+                
                 node = {
                     "name": f"VLESS-Reality-{f}",
                     "type": "vless",
                     "server": v['address'],
                     "port": v['port'],
                     "uuid": v['users'][0]['id'],
-                    "cipher": "auto", "tls": True, "udp": True,
+                    "cipher": "auto",
+                    "tls": True,
+                    "udp": True,
                     "servername": ss['realitySettings']['serverName'],
                     "network": ss.get('network', 'tcp'),
-                    "reality-opts": {"public-key": ss['realitySettings']['publicKey'], "short-id": ss['realitySettings'].get('shortId', "")},
+                    "reality-opts": {
+                        "public-key": ss['realitySettings']['publicKey'],
+                        "short-id": ss['realitySettings'].get('shortId', "")
+                    },
                     "client-fingerprint": ss['realitySettings'].get('fingerprint', 'chrome')
                 }
+                
+                # 如果是 xhttp，必须加上 path
+                if ss.get('network') == 'xhttp':
+                    node["xhttp-opts"] = {"path": xpath}
+                
                 add_node(node)
         except: pass
 
