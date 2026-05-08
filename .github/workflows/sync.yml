@@ -1,27 +1,37 @@
-name: 定时抓取配置文件
+name: 自动同步与转换
 
 on:
   schedule:
-    # 每 6 小时运行一次 (UTC 时间)
-    - cron: '0 */6 * * *'
-  workflow_dispatch: # 允许手动点击运行
+    - cron: '0 */6 * * *' # 每 6 小时运行一次
+  workflow_dispatch:      # 允许手动运行
 
 jobs:
-  fetch-and-sync:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: 检出代码
         uses: actions/checkout@v3
 
-      - name: 运行抓取脚本
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 安装 Python 依赖
+        run: pip install pyyaml
+
+      - name: 执行下载脚本
         run: |
           chmod +x fetch_configs.sh
           ./fetch_configs.sh
 
-      - name: 提交并推送更改
+      - name: 执行转换脚本
+        run: python generate_clash.py
+
+      - name: 提交并推送
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Action"
           git add .
-          # 只有在有变动时才提交
-          git diff --quiet && git diff --staged --quiet || (git commit -m "自动更新配置: $(date)" && git push)
+          # 如果没有文件变动，则退出而不报错
+          git diff --quiet && git diff --staged --quiet || (git commit -m "更新节点: $(date)" && git push)
