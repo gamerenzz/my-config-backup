@@ -125,7 +125,7 @@ proxies:
   password: dongtaiwang.com
   sni: www.bing.com
   skip-cert-verify: true
-- name: TUIC-2.json
+- name: Singbox-TUIC-2.json-https://github.com/Alvin9999-newpac/fanqian
   type: tuic
   server: 89.144.35.232
   port: 17306
@@ -135,6 +135,8 @@ proxies:
   - h3
   sni: www.microsoft.com
   skip-cert-verify: true
+  congestion-controller: bbr
+  udp-relay-mode: native
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -150,7 +152,7 @@ proxy-groups:
   - VLESS-Reality-4.json
   - VLESS-Reality-1.json
   - Hysteria2-2.json
-  - TUIC-2.json
+  - Singbox-TUIC-2.json-https://github.com/Alvin9999-newpac/fanqian
 - name: ♻️ 自动选择
   type: fallback
   url: http://www.gstatic.com/generate_204
@@ -165,6 +167,6 @@ proxy-groups:
   - VLESS-Reality-4.json
   - VLESS-Reality-1.json
   - Hysteria2-2.json
-  - TUIC-2.json
+  - Singbox-TUIC-2.json-https://github.com/Alvin9999-newpac/fanqian
 rules:
 - MATCH,🚀 节点选择
