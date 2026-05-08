@@ -23,7 +23,7 @@ mv clash.meta2/* clash/ 2>/dev/null || true
 download_files "xray" 4 "config.json"
 download_files "hysteria" 4 "config.json"
 download_files "hysteria2" 4 "config.json"
-download_files "singbox" 4 "config.json"
+download_files "singbox" 2 "config.json"
 download_files "naiveproxy" 2 "config.json"
 download_files "juicity" 2 "config.json"
 download_files "shadowquic" 2 "client.yaml"
