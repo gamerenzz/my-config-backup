@@ -223,18 +223,6 @@ proxies:
   up: 100
   down: 100
 - name: 节点18
-  type: hysteria2
-  server: 2001:bc8:32d7:302::17
-  port: 20088
-  password: dongtaiwang.com
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  protocol: udp
-  up: 100
-  down: 100
-- name: 节点19
   server: 2001:bc8:32d7:302::16
   port: 34997
   type: tuic
@@ -247,6 +235,18 @@ proxies:
   reduce-rtt: true
   udp-relay-mode: native
   congestion-controller: bbr
+- name: 节点19
+  type: hysteria2
+  server: 2001:bc8:32d7:302::17
+  port: 20088
+  password: dongtaiwang.com
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  protocol: udp
+  up: 100
+  down: 100
 - name: visa.com
   server: visa.com
   port: 443
