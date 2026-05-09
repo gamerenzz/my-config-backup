@@ -113,38 +113,6 @@ proxies:
   up: 100 Mbps
   down: 100 Mbps
 - name: 节点8
-  type: vless
-  server: 2001:bc8:32d7:302::13
-  uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
-  port: 34324
-  udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: dash.cloudflare.com
-  reality-opts:
-    public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
-    short-id: ''
-  client-figerprint: chrome
-- name: 节点9
-  type: vmess
-  server: 2001:bc8:32d7:302::10
-  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
-  alterId: 0
-  port: 44579
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: ''
-    headers: {}
-- name: 节点10
-  type: vless
-  server: 118.166.29.38
-  uuid: b0a4c3bf-f170-46e2-8cef-7ed2fc2e6748
-  port: 44965
-  udp: true
-  tls: true
-- name: 节点11
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -157,7 +125,20 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip29.9447609.xyz
-- name: 节点12
+- name: 节点9
+  type: vless
+  server: 2001:bc8:32d7:302::13
+  uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
+  port: 34324
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: dash.cloudflare.com
+  reality-opts:
+    public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
+    short-id: ''
+  client-figerprint: chrome
+- name: 节点10
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -170,13 +151,38 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip19.9447609.xyz
-- name: 节点13
+- name: 节点11
+  type: vmess
+  server: 2001:bc8:32d7:302::10
+  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  alterId: 0
+  port: 44579
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: ''
+    headers: {}
+- name: 节点12
   type: vless
   server: 157.254.223.137
   uuid: 0b138cbd-73f2-482c-ac69-c4b2ebeb891d
   port: 24089
   udp: true
   tls: true
+- name: 节点13
+  type: hysteria
+  server: 5.83.129.90
+  port: 54177
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+    - h3
 - name: 节点14
   type: vless
   server: 89.144.35.230
@@ -206,22 +212,21 @@ proxies:
     - h3
 - name: 节点17
   type: hysteria
-  server: 5.83.129.90
-  port: 54177
-  auth_str: dongtaiwang.com
-  up: 100
-  down: 100
-  fast-open: true
-  protocol: udp
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-- name: 节点18
-  type: hysteria
   server: 2001:bc8:32d7:17b::2
   port: 11000
   auth-str: dongtaiwang.com
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  protocol: udp
+  up: 100
+  down: 100
+- name: 节点18
+  type: hysteria2
+  server: 2001:bc8:32d7:302::17
+  port: 20088
+  password: dongtaiwang.com
   sni: apple.com
   skip-cert-verify: true
   alpn:
@@ -242,18 +247,6 @@ proxies:
   reduce-rtt: true
   udp-relay-mode: native
   congestion-controller: bbr
-- name: 节点20
-  type: hysteria2
-  server: 2001:bc8:32d7:302::17
-  port: 20088
-  password: dongtaiwang.com
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  protocol: udp
-  up: 100
-  down: 100
 - name: visa.com
   server: visa.com
   port: 443
@@ -381,7 +374,6 @@ proxy-groups:
   - 节点17
   - 节点18
   - 节点19
-  - 节点20
 - name: 老司机
   type: url-test
   url: https://www.google.com/generate_204
@@ -419,7 +411,6 @@ proxy-groups:
   - 节点17
   - 节点18
   - 节点19
-  - 节点20
 rules:
 - RULE-SET,private_ip,DIRECT,no-resolve
 - RULE-SET,private_domain,DIRECT

@@ -111,22 +111,6 @@ proxies:
   client-fingerprint: chrome
   xhttp-opts:
     path: /alvin9999.com
-- name: VLESS-Reality-1.json
-  type: vless
-  server: 118.166.29.38
-  port: 44965
-  uuid: b0a4c3bf-f170-46e2-8cef-7ed2fc2e6748
-  cipher: auto
-  tls: true
-  udp: true
-  servername: www.cloudflare.com
-  network: xhttp
-  reality-opts:
-    public-key: z1_FVLAxN66t1373faq2D-BV8B7CyILrwc0vMiYw9Cc
-    short-id: d3c7911a
-  client-fingerprint: chrome
-  xhttp-opts:
-    path: /tvFTD707
 - name: Hys1-3.json
   type: hysteria
   server: 5.83.129.90
@@ -275,7 +259,6 @@ proxy-groups:
   - VLESS-Reality-3.json
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
-  - VLESS-Reality-1.json
   - Hys1-3.json
   - Hys1-2.json
   - Hys2-2.json
@@ -301,7 +284,6 @@ proxy-groups:
   - VLESS-Reality-3.json
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
-  - VLESS-Reality-1.json
   - Hys1-3.json
   - Hys1-2.json
   - Hys2-2.json

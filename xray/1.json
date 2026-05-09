@@ -36,13 +36,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "118.166.29.38", "port": 44965,
+            "address": "157.254.223.137", "port": 24089,
             "users": [
               {
-                "id": "b0a4c3bf-f170-46e2-8cef-7ed2fc2e6748",
+                "id": "0b138cbd-73f2-482c-ac69-c4b2ebeb891d",
                 "email": "t@t.tt",
                 "security": "auto",
-                "encryption": "mlkem768x25519plus.native.0rtt.P2iHYoi7bDgaGESPBPEZqEQSgIhntSRvsNeC0SuqaoxPTRBrG3o3uBzJKowbXhRBQPUCc3rGOEGxJii47toBFcVnbKMmH8YvNgVXUoZQALFgM4e8dhp4SCMJSFYgf1UpFRsl_LYRl-EMYqCtJFySBnYs8cAxc2A90hGsurbHKeGSFnUIoyF-HcktRbKd67vPPplW-WuucdMVA2EH1mZOFau6zjynVSDEGPhtUHSUyWdNA4p56DpwABG97nYqK_doisGI1cOTEbkTgFkytLawdxoIBjytudS4ZxelvRgwgdSDR5N2xhAA47gZjHlrnAKL92p-SuwTlIq9LLSawesTHcCFtmW1b2mKIBu3UIy56IwoakmxBPoqu9JZNmGyDQu0YUTCgCe9YQWKhlzGTAiBpSRWg9mb4_CgW0uxsCyOg-Fu1Exf4DBKnoCV4RFn43TJpUObCwhJzLRSWVHEmVUt9cYzXgIwLQCeU3u4NKRKlSIfSzOPgkvJg5p6k3iBIkcf-bKQbrC7Wcyi7Lmuxyiq-1Bdz9FAnKZAFUs82DFb2HOSi2sgeJSlBxawklFm0YRo-0QuwkBXC9tbTfJNlDQpTipWh-pkH6E1RUq8UvaqB4SuRWsdWUxVbiYSDgmuPYBt7gVXVQKIOZp5s7Sc5qW7EEWBYTi4qbSeDXPDhZBDwWNqpMxL1uYFygYpg0tEfabBURIH2IRMFYqfn4aFSYAdh4ZbQPdnBxuqmjp4WCkIXTKQbkxuxXW1h7Ck1NGHC8whIumjxmiU-0aBAOxApKcq1aRzCgmswDEd6jYaXTdtpwdcuKOuJnC9AgY1AXIeVySqoKyBrsmvCLeoe0mjs1FMDRKQB4i_qpGZXPAM4Otv7JtyK0wUH9BBXoKd7cdW0je6A7m5mYVv1DBwIuIVp8mViPMWW4YyxBeaWIRH_CGfaJa7Yhp2EWzN1YedATVoHpWr8lMOpCG9opcR8lNpOOZmXzKerusZ6SrF0GOr-tJMPOSHzFN9sgPPEuuh8deUSBJGf2EYPzIbXVV0KciH86EgzAOGipBF0dRmCGoMxjGLruhhA5tUHqsvGkNC4OI4wPEY0vGOGqVFjmwdQac8h8LGFWA333Olg8zOr4nPeNh7rDF_wic6xMkiKncHUZMnB_OQQCY8VzRhN3p3ppHLSugU6Ux1_-F5YuZ3Mcq15Uaz7QaXOsk-a-mQwAZCURCKyRHM0Yllk-OhdiMQsVVSdWEIHmUZ_cg5d7ZjmXNlMFYCDAAQciISiQSRpldlRxATD0sRyEqVI8VbosaFogZnvjlDpUOWZuCCMlRxbhUZGaRPJKMWH5sHvgxo5SA2qtuvmlZjdWCvHtrFoWZBLeOMJGfKfmgEeUp6cYuKxRHILxKuEzsiiycNAmB-pkKov3CKHTExSusaLgkv1HVC95ekJkKchMq2VwKtt0Yw7WZawOHKwRxysjs1ooW5jWhOAdZ9nOZ-q4VOT7ZKuxd85nhKNFGrbMaX30mvPSFeCvWKjkofCKaV26eBcCJYYxwbLms1MmeyQ-l2_BMajHkSzm_ZXgcFktII5itsyrWvKur1mshzhiE",
+                "encryption": "mlkem768x25519plus.native.0rtt.6CWgfTECvPCYcwQAV5DL6jVRvKfD83J1Djq2q9DIh8y7d4vP90AJFng38eQl8MxZcquOmhnFWYGW4ifEG-pNiMVQWBZiVrUgezGQnZEY33kktFc1ffaIV1OBdOqTgmWKrqE5e0M3WTiqjneY7yInWNqvUYmyfIsAJpO3NVaD5egKoeQ_RGFpoLAOf9M9QpFoLpqQMYcvGAFyiRZwBzwecHMiE4XC52G2bYA3IwvDYGtG3RPIYfE0NyRt9ojLjgBdgXewJXp8dMYimqZugVQ8n0qSRjGvqRwOTAuPAujEoKkREcOWShBg9XkWeWhB7hqdluk0VQWJXvxrygmMByAGiRAe5AakWBZlBNoVJvQZtWVNtwxq5JNV2HufvOmHS-QpzUl3zlRXuTSsLuiHkyUUZLWBJsu_JmSz1KdjF7a45iEhUSqP2InAv3YQc0ZTqiN4eZd0ScIRrORQvHIix2yToXHOZ5dN0sERUwrK5rkOf8ujgmMDSuo9MgQYiCa33bkO3oc1UEK-mHqxyxOzEmUWTeZmqJphkdxc8dc4OfiXhUJrwvHMEChqjvwRA9EmLxhucGHIuxIsgsbNN_Qw3_DCR4eMdtsUD7dAxbAw9aS37QC2B6wcPIEC-FkauDIFJLHIO-w5RzlelNBr5bdL7Fce67RrPLKkrjJxEqhEQxZdhIZltPAFXODEACIKhzIvlYefkikk2vCMZfm48SpI74RN21lm-crMpfNdUsOE0eI4sZyvSGe9cVTKAdgN1YgaqFoFmhQ1jrJsyWpeh3wZMAqScZqipMkddzQlynLBW-Jo4TmHKld-5eBdKtMwScQKG2sAZNs6knW8FxpT-5OfLAgGAne9URZCxSwwgisvpWk5_YCljtvPh_qw4IQa6CG4yocifZFzfzTAduNlmmKM6HNrSNhBhcOe1aBk9OWluqPGPzx8hol_4lojaYw2gZUEPgzLS-BpRAc-NIkGVldmn2XKnUF6IJRuPIZIdkK7hhddYufN1KObJySmTDkJ0EE3DJvPmdcdOCFJbdCl5pqnORChB3p1_Edd6oYohZk-dxUUBFgvyYdvFwGu_zlAVClOWTRIilgjH5OBEftgURyb4sZrWvgaJkxnv0ckXDmL1DkHh1yT6mi91Opu30sWIssSKaMVGcuhTFFyyfxETLN38-GVfRwf19FJSPs0HsRQJkRFnSx8CDcvmNarZzBR_JEDOsYqWLMQC5FqnZyQJLmHnuJ3OgcflTrCc9m1DIGbvZq_Z5ikQZSq2Ua469OSW1E1m-s4k5q0Y5RXppuf0Np2vykcLFZKLmmU5_ismTQHrJSnysQchxR68yEor8sXgmRDNHCC1GNKc5O1WmKKXbEXJyKo3vIxTDyHTUUpK5ma5LZ51UUEE8N-LPNlEtt2HIsOBvBrXflYrqOP1mZZDjYEJvSMhPp8Q7SyhWLFXqGQD6hBSYw8Q0V-Cog8FtpVV5EsGRFbt5iFCNwqfTwZMzE4ZEs3rumf3IO2P4nBfpuGjEw6pNZZyMtDbTq_pMlxzQI_N2NwBecyINeQ0RqzGM8De7RJpdu18NftXZyhrymcVpV-2L0",
                 "flow": "xtls-rprx-vision"
               }
             ]
@@ -51,11 +51,11 @@
       },
       "streamSettings": {
         "network": "xhttp", "security": "reality",
-        "xhttpSettings": { "path": "/tvFTD707", "mode": "auto" },
+        "xhttpSettings": { "path": "/S6wHAExO", "mode": "auto" },
         "realitySettings": {
-          "serverName": "www.cloudflare.com", "fingerprint": "chrome", "show": false,
-          "publicKey": "z1_FVLAxN66t1373faq2D-BV8B7CyILrwc0vMiYw9Cc",
-          "shortId": "d3c7911a", "spiderX": "", "mldsa65Verify": ""
+          "serverName": "www.microsoft.com", "fingerprint": "chrome", "show": false,
+          "publicKey": "njrfRguP2WJFUtBH11bJTaIEfGIb28V7_Sahlhbldyw",
+          "shortId": "54ffd503", "spiderX": "", "mldsa65Verify": ""
         }
       },
       "mux": { "enabled": false, "concurrency": -1 }
@@ -73,5 +73,6 @@
     ]
   }
 }
+
 
 
