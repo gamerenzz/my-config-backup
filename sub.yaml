@@ -82,19 +82,19 @@ proxies:
 - name: VLESS-Reality-2.json
   type: vless
   server: 157.254.223.137
-  port: 24089
-  uuid: 0b138cbd-73f2-482c-ac69-c4b2ebeb891d
+  port: 33323
+  uuid: 0f48492a-adf1-49e6-b73d-dc2888fa68ac
   cipher: auto
   tls: true
   udp: true
   servername: www.microsoft.com
   network: xhttp
   reality-opts:
-    public-key: njrfRguP2WJFUtBH11bJTaIEfGIb28V7_Sahlhbldyw
-    short-id: 54ffd503
+    public-key: k0A9n6nHl0ZiOetEFaWw2MQF-MtvzebHRea1DU2oy0I
+    short-id: 8855461f
   client-fingerprint: chrome
   xhttp-opts:
-    path: /S6wHAExO
+    path: /N9BsMUaP
 - name: VLESS-Reality-4.json
   type: vless
   server: 2a14:7584:d097::a
