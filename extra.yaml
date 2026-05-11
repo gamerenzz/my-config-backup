@@ -82,16 +82,6 @@ proxies:
   down: 100 Mbps
 - name: 节点5
   type: hysteria2
-  server: 2001:bc8:32d7:302::11
-  port: '20088'
-  password: dongtaiwang.com
-  fast-open: true
-  sni: apple.com
-  skip-cert-verify: true
-  up: 100 Mbps
-  down: 100 Mbps
-- name: 节点6
-  type: hysteria2
   server: 157.254.223.43
   port: '27921'
   password: dongtaiwang.com
@@ -102,7 +92,7 @@ proxies:
   down: 100 Mbps
   ports: 28000-29000
   hop-interval: '30'
-- name: 节点7
+- name: 节点6
   type: hysteria2
   server: 2001:bc8:32d7:17b::3
   port: '22000'
@@ -112,20 +102,7 @@ proxies:
   skip-cert-verify: true
   up: 100 Mbps
   down: 100 Mbps
-- name: 节点8
-  type: vmess
-  server: 104.21.238.35
-  uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
-  alterId: 0
-  port: 2086
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: github.com/Alvin9999
-    headers:
-      Host: ip29.9447609.xyz
-- name: 节点9
+- name: 节点7
   type: vless
   server: 2001:bc8:32d7:302::13
   uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
@@ -138,7 +115,7 @@ proxies:
     public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
     short-id: ''
   client-figerprint: chrome
-- name: 节点10
+- name: 节点8
   type: vmess
   server: 2001:bc8:32d7:302::10
   uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
@@ -150,6 +127,23 @@ proxies:
   ws-opts:
     path: ''
     headers: {}
+- name: 节点9
+  type: hysteria2
+  server: 2001:bc8:32d7:302::11
+  port: '20088'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: apple.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
+- name: 节点10
+  type: vless
+  server: 157.254.223.137
+  uuid: 0f48492a-adf1-49e6-b73d-dc2888fa68ac
+  port: 33323
+  udp: true
+  tls: true
 - name: 节点11
   type: vmess
   server: 104.21.238.35
@@ -165,15 +159,35 @@ proxies:
       Host: ip19.9447609.xyz
 - name: 节点12
   type: vless
-  server: 157.254.223.137
-  uuid: 0f48492a-adf1-49e6-b73d-dc2888fa68ac
-  port: 33323
+  server: 89.144.35.230
+  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
+  port: 54582
   udp: true
   tls: true
 - name: 节点13
+  type: vless
+  server: 2a14:7584:d097::a
+  uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
+  port: 11330
+  udp: true
+  tls: true
+- name: 节点14
+  type: vmess
+  server: 104.21.238.35
+  uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
+  alterId: 0
+  port: 2086
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: github.com/Alvin9999
+    headers:
+      Host: ip29.9447609.xyz
+- name: 节点15
   type: hysteria
-  server: 5.83.129.90
-  port: 54177
+  server: 45.150.65.154
+  port: 47119
   auth_str: dongtaiwang.com
   up: 100
   down: 100
@@ -183,24 +197,10 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点14
-  type: vless
-  server: 89.144.35.230
-  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
-  port: 54582
-  udp: true
-  tls: true
-- name: 节点15
-  type: vless
-  server: 2a14:7584:d097::a
-  uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
-  port: 11330
-  udp: true
-  tls: true
 - name: 节点16
   type: hysteria
-  server: 45.150.65.154
-  port: 47119
+  server: 5.83.129.90
+  port: 54177
   auth_str: dongtaiwang.com
   up: 100
   down: 100
@@ -223,18 +223,6 @@ proxies:
   up: 100
   down: 100
 - name: 节点18
-  type: hysteria2
-  server: 2001:bc8:32d7:302::17
-  port: 20088
-  password: dongtaiwang.com
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  protocol: udp
-  up: 100
-  down: 100
-- name: 节点19
   server: 2001:bc8:32d7:302::16
   port: 34997
   type: tuic
@@ -247,6 +235,18 @@ proxies:
   reduce-rtt: true
   udp-relay-mode: native
   congestion-controller: bbr
+- name: 节点19
+  type: hysteria2
+  server: 2001:bc8:32d7:302::17
+  port: 20088
+  password: dongtaiwang.com
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  protocol: udp
+  up: 100
+  down: 100
 - name: visa.com
   server: visa.com
   port: 443
