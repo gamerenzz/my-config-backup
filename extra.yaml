@@ -150,25 +150,6 @@ proxies:
   client-figerprint: chrome
 - name: 节点11
   type: vmess
-  server: 2001:bc8:32d7:302::10
-  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
-  alterId: 0
-  port: 44579
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: ''
-    headers: {}
-- name: 节点12
-  type: vless
-  server: 89.144.35.230
-  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
-  port: 54582
-  udp: true
-  tls: true
-- name: 节点13
-  type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
   alterId: 0
@@ -180,11 +161,30 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip19.9447609.xyz
+- name: 节点12
+  type: vmess
+  server: 2001:bc8:32d7:302::10
+  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  alterId: 0
+  port: 44579
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: ''
+    headers: {}
+- name: 节点13
+  type: vless
+  server: 157.254.223.137
+  uuid: 50ca5bbf-bf9b-4013-bee2-50367aa11218
+  port: 32985
+  udp: true
+  tls: true
 - name: 节点14
   type: vless
-  server: 2a14:7584:d097::a
-  uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
-  port: 11330
+  server: 89.144.35.230
+  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
+  port: 54582
   udp: true
   tls: true
 - name: 节点15
@@ -201,6 +201,13 @@ proxies:
   alpn:
     - h3
 - name: 节点16
+  type: vless
+  server: 2a14:7584:d097::a
+  uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
+  port: 11330
+  udp: true
+  tls: true
+- name: 节点17
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -213,7 +220,7 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点17
+- name: 节点18
   type: hysteria
   server: 2001:bc8:32d7:17b::2
   port: 11000
@@ -225,19 +232,6 @@ proxies:
   protocol: udp
   up: 100
   down: 100
-- name: 节点18
-  server: 2001:bc8:32d7:302::16
-  port: 34997
-  type: tuic
-  uuid: 8687b6e0-ef24-4cd2-bcd2-02d3732bf554
-  password: dongtaiwang.com
-  alpn:
-    - h3
-  sni: bing.com
-  skip-cert-verify: true
-  reduce-rtt: true
-  udp-relay-mode: native
-  congestion-controller: bbr
 - name: 节点19
   type: hysteria2
   server: 2001:bc8:32d7:302::17
@@ -250,6 +244,19 @@ proxies:
   protocol: udp
   up: 100
   down: 100
+- name: 节点20
+  server: 2001:bc8:32d7:302::16
+  port: 34997
+  type: tuic
+  uuid: 8687b6e0-ef24-4cd2-bcd2-02d3732bf554
+  password: dongtaiwang.com
+  alpn:
+    - h3
+  sni: bing.com
+  skip-cert-verify: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
 - name: visa.com
   server: visa.com
   port: 443
@@ -377,6 +384,7 @@ proxy-groups:
   - 节点17
   - 节点18
   - 节点19
+  - 节点20
 - name: 老司机
   type: url-test
   url: https://www.google.com/generate_204
@@ -414,6 +422,7 @@ proxy-groups:
   - 节点17
   - 节点18
   - 节点19
+  - 节点20
 rules:
 - RULE-SET,private_ip,DIRECT,no-resolve
 - RULE-SET,private_domain,DIRECT

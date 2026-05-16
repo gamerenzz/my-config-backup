@@ -65,20 +65,20 @@ proxies:
   congestion-controller: bbr
 - name: VLESS-Reality-2.json
   type: vless
-  server: 89.144.35.230
-  port: 54582
-  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
+  server: 157.254.223.137
+  port: 32985
+  uuid: 50ca5bbf-bf9b-4013-bee2-50367aa11218
   cipher: auto
   tls: true
   udp: true
-  servername: apple.com
+  servername: www.adobe.com
   network: xhttp
   reality-opts:
-    public-key: kfw5DgkyKiovC3dzb-o2PUYnZPnbYvbx2IwERUv9czY
-    short-id: 225e2cc8
+    public-key: z9orcLbpAxiBhv2Vo3Rz-fT3tOBnlHqRwYSBRcmUE18
+    short-id: 061e447b
   client-fingerprint: chrome
   xhttp-opts:
-    path: 5cfc52bc-e701-4160-89df-930a0c040576-xh
+    path: /V1Br2Hb7
 - name: VLESS-Reality-4.json
   type: vless
   server: 2a14:7584:d097::a
@@ -95,6 +95,22 @@ proxies:
   client-fingerprint: chrome
   xhttp-opts:
     path: /alvin9999.com
+- name: VLESS-Reality-3.json
+  type: vless
+  server: 89.144.35.230
+  port: 54582
+  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
+  cipher: auto
+  tls: true
+  udp: true
+  servername: apple.com
+  network: xhttp
+  reality-opts:
+    public-key: kfw5DgkyKiovC3dzb-o2PUYnZPnbYvbx2IwERUv9czY
+    short-id: 225e2cc8
+  client-fingerprint: chrome
+  xhttp-opts:
+    path: 5cfc52bc-e701-4160-89df-930a0c040576-xh
 - name: Hys1-2.json
   type: hysteria
   server: 5.83.129.153
@@ -260,6 +276,7 @@ proxy-groups:
   - Clash-tuic-3
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
+  - VLESS-Reality-3.json
   - Hys1-2.json
   - Hys1-4.json
   - Hys2-2.json
@@ -286,6 +303,7 @@ proxy-groups:
   - Clash-tuic-3
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
+  - VLESS-Reality-3.json
   - Hys1-2.json
   - Hys1-4.json
   - Hys2-2.json
