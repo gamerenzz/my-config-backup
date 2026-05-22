@@ -56,16 +56,6 @@ proxies:
   recv_window_conn: 69206016
   recv-window: 276824064
 - name: 节点3
-  type: hysteria2
-  server: 2001:bc8:32d7:17b::8
-  port: '22000'
-  password: dongtaiwang.com
-  fast-open: true
-  sni: apple.com
-  skip-cert-verify: true
-  up: 100 Mbps
-  down: 100 Mbps
-- name: 节点4
   type: hysteria
   server: 5.83.129.90
   port: '54177'
@@ -80,6 +70,16 @@ proxies:
     - h3
   recv_window_conn: 57671680
   recv-window: 230686720
+- name: 节点4
+  type: hysteria2
+  server: 2001:bc8:32d7:17b::8
+  port: '22000'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: apple.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
 - name: 节点5
   type: hysteria2
   server: 2001:bc8:32d7:302::11
@@ -162,6 +162,13 @@ proxies:
     headers:
       Host: ip19.9447609.xyz
 - name: 节点12
+  type: vless
+  server: 157.254.223.137
+  uuid: 4d5bdb4d-27c1-4a5d-a1de-e3ef05a8654b
+  port: 27712
+  udp: true
+  tls: true
+- name: 节点13
   type: vmess
   server: 2001:bc8:32d7:302::10
   uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
@@ -173,13 +180,6 @@ proxies:
   ws-opts:
     path: ''
     headers: {}
-- name: 节点13
-  type: vless
-  server: 157.254.223.137
-  uuid: 4d5bdb4d-27c1-4a5d-a1de-e3ef05a8654b
-  port: 27712
-  udp: true
-  tls: true
 - name: 节点14
   type: vless
   server: 89.144.35.230
