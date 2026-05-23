@@ -150,6 +150,18 @@ proxies:
   client-figerprint: chrome
 - name: 节点11
   type: vmess
+  server: 2001:bc8:32d7:302::10
+  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  alterId: 0
+  port: 44579
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: ''
+    headers: {}
+- name: 节点12
+  type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
   alterId: 0
@@ -161,18 +173,6 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip19.9447609.xyz
-- name: 节点12
-  type: vmess
-  server: 2001:bc8:32d7:302::10
-  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
-  alterId: 0
-  port: 44579
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: ''
-    headers: {}
 - name: 节点13
   type: vless
   server: 157.254.223.137
@@ -188,6 +188,13 @@ proxies:
   udp: true
   tls: true
 - name: 节点15
+  type: vless
+  server: 2a14:7584:d097::a
+  uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
+  port: 11330
+  udp: true
+  tls: true
+- name: 节点16
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -200,13 +207,6 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点16
-  type: vless
-  server: 2a14:7584:d097::a
-  uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
-  port: 11330
-  udp: true
-  tls: true
 - name: 节点17
   type: hysteria
   server: 45.150.65.154
