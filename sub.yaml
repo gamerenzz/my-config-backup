@@ -66,19 +66,19 @@ proxies:
 - name: VLESS-Reality-2.json
   type: vless
   server: 157.254.223.137
-  port: 27712
-  uuid: 4d5bdb4d-27c1-4a5d-a1de-e3ef05a8654b
+  port: 30739
+  uuid: fa86c6b0-85af-4871-9689-37f539a1073e
   cipher: auto
   tls: true
   udp: true
-  servername: www.adobe.com
+  servername: one-piece.com
   network: xhttp
   reality-opts:
-    public-key: l9SbNq7w52igx7J2yv5Z9JJcV6Q6N4FRHJDNT9bCJlI
-    short-id: adcae570
+    public-key: Xy8tozH6IfnxgrPoeXklWIaKlY3r1pCb2xeIT75fnns
+    short-id: ce8e2a26
   client-fingerprint: chrome
   xhttp-opts:
-    path: /qMomJJ4h
+    path: /ZHeI247h
 - name: VLESS-Reality-4.json
   type: vless
   server: 2a14:7584:d097::a
@@ -95,6 +95,22 @@ proxies:
   client-fingerprint: chrome
   xhttp-opts:
     path: /alvin9999.com
+- name: VLESS-Reality-1.json
+  type: vless
+  server: 157.254.223.137
+  port: 16190
+  uuid: 1955f3d9-b395-4437-9fe4-0fc98b9d84c3
+  cipher: auto
+  tls: true
+  udp: true
+  servername: one-piece.com
+  network: xhttp
+  reality-opts:
+    public-key: Xy8tozH6IfnxgrPoeXklWIaKlY3r1pCb2xeIT75fnns
+    short-id: ce8e2a26
+  client-fingerprint: chrome
+  xhttp-opts:
+    path: /nfX5x33e
 - name: VLESS-Reality-3.json
   type: vless
   server: 89.144.35.230
@@ -276,6 +292,7 @@ proxy-groups:
   - Clash-tuic-3
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
+  - VLESS-Reality-1.json
   - VLESS-Reality-3.json
   - Hys1-2.json
   - Hys1-4.json
@@ -303,6 +320,7 @@ proxy-groups:
   - Clash-tuic-3
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
+  - VLESS-Reality-1.json
   - VLESS-Reality-3.json
   - Hys1-2.json
   - Hys1-4.json
