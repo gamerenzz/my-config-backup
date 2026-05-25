@@ -65,20 +65,20 @@ proxies:
   congestion-controller: bbr
 - name: VLESS-Reality-2.json
   type: vless
-  server: 157.254.223.137
-  port: 30739
-  uuid: fa86c6b0-85af-4871-9689-37f539a1073e
+  server: 62.210.113.151
+  port: 64489
+  uuid: 59f7ac8f-4a55-42ac-85b8-b3f96871761f
   cipher: auto
   tls: true
   udp: true
-  servername: one-piece.com
+  servername: www.lovelive-anime.jp
   network: xhttp
   reality-opts:
-    public-key: Xy8tozH6IfnxgrPoeXklWIaKlY3r1pCb2xeIT75fnns
-    short-id: ce8e2a26
+    public-key: Nw-FuuCWzFZvQtQbJjDCYJpCKyO8cuvibbTGBeoZRyo
+    short-id: 1ea5bfb5
   client-fingerprint: chrome
   xhttp-opts:
-    path: /ZHeI247h
+    path: /PGEulXbn
 - name: VLESS-Reality-4.json
   type: vless
   server: 2a14:7584:d097::a
@@ -97,20 +97,20 @@ proxies:
     path: /alvin9999.com
 - name: VLESS-Reality-1.json
   type: vless
-  server: 157.254.223.137
-  port: 16190
-  uuid: 1955f3d9-b395-4437-9fe4-0fc98b9d84c3
+  server: 62.210.113.151
+  port: 45641
+  uuid: f2d9e117-231c-4946-87d8-2cde2222b85d
   cipher: auto
   tls: true
   udp: true
-  servername: one-piece.com
+  servername: www.lovelive-anime.jp
   network: xhttp
   reality-opts:
-    public-key: Xy8tozH6IfnxgrPoeXklWIaKlY3r1pCb2xeIT75fnns
-    short-id: ce8e2a26
+    public-key: Nw-FuuCWzFZvQtQbJjDCYJpCKyO8cuvibbTGBeoZRyo
+    short-id: 1ea5bfb5
   client-fingerprint: chrome
   xhttp-opts:
-    path: /nfX5x33e
+    path: /SSSuqkzN
 - name: VLESS-Reality-3.json
   type: vless
   server: 89.144.35.230
@@ -153,10 +153,10 @@ proxies:
   skip-cert-verify: true
 - name: Hys2-2.json
   type: hysteria2
-  server: 157.254.223.43
-  port: 27921
-  password: dongtaiwang.com
-  sni: www.bing.com
+  server: 163.172.126.108
+  port: 41227
+  password: github.com/Alvin9999-newpac/fanqiang
+  sni: www.microsoft.com
   skip-cert-verify: true
 - name: Hys2-1.json
   type: hysteria2
