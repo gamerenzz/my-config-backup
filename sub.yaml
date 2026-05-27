@@ -12,7 +12,20 @@ dns:
   - 223.5.5.5
   - 119.29.29.29
 proxies:
-- name: Clash-hysteria-0
+- name: Clash-tuic-0
+  server: ip1.758733.xyz
+  port: 10088
+  type: tuic
+  uuid: 9bbd1f42-7ae7-4239-bd10-a68de95e3295
+  password: dongtaiwang.com
+  sni: apple.com
+  alpn:
+  - h3
+  request-timeout: 8000
+  udp-relay-mode: native
+  skip-cert-verify: true
+  congestion-controller: bbr
+- name: Clash-hysteria-1
   type: hysteria
   server: 2a14:7584:d097::a
   port: 54177
@@ -24,26 +37,13 @@ proxies:
   protocol: udp
   up: 11 Mbps
   down: 55 Mbps
-- name: Clash-tuic-1
+- name: Clash-tuic-2
   server: 5.178.101.117
   port: 30006
   type: tuic
   uuid: 36106e0f-4d9a-470b-a3fd-535f3b7a1e92
   password: dongtaiwang.com
   sni: www.microsoft.com
-  alpn:
-  - h3
-  request-timeout: 8000
-  udp-relay-mode: native
-  skip-cert-verify: true
-  congestion-controller: bbr
-- name: Clash-tuic-2
-  server: ip1.758733.xyz
-  port: 10088
-  type: tuic
-  uuid: 9bbd1f42-7ae7-4239-bd10-a68de95e3295
-  password: dongtaiwang.com
-  sni: apple.com
   alpn:
   - h3
   request-timeout: 8000
@@ -79,38 +79,6 @@ proxies:
   client-fingerprint: chrome
   xhttp-opts:
     path: /PGEulXbn
-- name: VLESS-Reality-4.json
-  type: vless
-  server: 2a14:7584:d097::a
-  port: 11330
-  uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
-  cipher: auto
-  tls: true
-  udp: true
-  servername: toarumajutsunoindex.fandom.com
-  network: xhttp
-  reality-opts:
-    public-key: 3HaD5Ztk3X4gi3aJLVesV6KSJTW2YGG-hvGD3ZumJkE
-    short-id: fa789b2f5ff56959
-  client-fingerprint: chrome
-  xhttp-opts:
-    path: /alvin9999.com
-- name: VLESS-Reality-1.json
-  type: vless
-  server: 62.210.113.151
-  port: 45641
-  uuid: f2d9e117-231c-4946-87d8-2cde2222b85d
-  cipher: auto
-  tls: true
-  udp: true
-  servername: www.lovelive-anime.jp
-  network: xhttp
-  reality-opts:
-    public-key: Nw-FuuCWzFZvQtQbJjDCYJpCKyO8cuvibbTGBeoZRyo
-    short-id: 1ea5bfb5
-  client-fingerprint: chrome
-  xhttp-opts:
-    path: /SSSuqkzN
 - name: VLESS-Reality-3.json
   type: vless
   server: 89.144.35.230
@@ -127,6 +95,38 @@ proxies:
   client-fingerprint: chrome
   xhttp-opts:
     path: 5cfc52bc-e701-4160-89df-930a0c040576-xh
+- name: VLESS-Reality-1.json
+  type: vless
+  server: 62.210.113.151
+  port: 45641
+  uuid: f2d9e117-231c-4946-87d8-2cde2222b85d
+  cipher: auto
+  tls: true
+  udp: true
+  servername: www.lovelive-anime.jp
+  network: xhttp
+  reality-opts:
+    public-key: Nw-FuuCWzFZvQtQbJjDCYJpCKyO8cuvibbTGBeoZRyo
+    short-id: 1ea5bfb5
+  client-fingerprint: chrome
+  xhttp-opts:
+    path: /SSSuqkzN
+- name: VLESS-Reality-4.json
+  type: vless
+  server: 2a14:7584:d097::a
+  port: 11330
+  uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
+  cipher: auto
+  tls: true
+  udp: true
+  servername: toarumajutsunoindex.fandom.com
+  network: xhttp
+  reality-opts:
+    public-key: 3HaD5Ztk3X4gi3aJLVesV6KSJTW2YGG-hvGD3ZumJkE
+    short-id: fa789b2f5ff56959
+  client-fingerprint: chrome
+  xhttp-opts:
+    path: /alvin9999.com
 - name: Hys1-2.json
   type: hysteria
   server: 5.83.129.153
@@ -139,7 +139,7 @@ proxies:
   - h3
   protocol: udp
   skip-cert-verify: true
-- name: Hys1-4.json
+- name: Hys1-3.json
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -286,16 +286,16 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - Clash-hysteria-0
-  - Clash-tuic-1
+  - Clash-tuic-0
+  - Clash-hysteria-1
   - Clash-tuic-2
   - Clash-tuic-3
   - VLESS-Reality-2.json
-  - VLESS-Reality-4.json
-  - VLESS-Reality-1.json
   - VLESS-Reality-3.json
+  - VLESS-Reality-1.json
+  - VLESS-Reality-4.json
   - Hys1-2.json
-  - Hys1-4.json
+  - Hys1-3.json
   - Hys2-2.json
   - Hys2-1.json
   - Singbox-TUIC-2.json
@@ -314,16 +314,16 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - Clash-hysteria-0
-  - Clash-tuic-1
+  - Clash-tuic-0
+  - Clash-hysteria-1
   - Clash-tuic-2
   - Clash-tuic-3
   - VLESS-Reality-2.json
-  - VLESS-Reality-4.json
-  - VLESS-Reality-1.json
   - VLESS-Reality-3.json
+  - VLESS-Reality-1.json
+  - VLESS-Reality-4.json
   - Hys1-2.json
-  - Hys1-4.json
+  - Hys1-3.json
   - Hys2-2.json
   - Hys2-1.json
   - Singbox-TUIC-2.json
