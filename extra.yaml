@@ -123,19 +123,6 @@ proxies:
   up: 100 Mbps
   down: 100 Mbps
 - name: 节点9
-  type: vless
-  server: 2001:bc8:32d7:302::13
-  uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
-  port: 34324
-  udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: dash.cloudflare.com
-  reality-opts:
-    public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
-    short-id: ''
-  client-figerprint: chrome
-- name: 节点10
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -148,7 +135,32 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip29.9447609.xyz
+- name: 节点10
+  type: vless
+  server: 2001:bc8:32d7:302::13
+  uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
+  port: 34324
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: dash.cloudflare.com
+  reality-opts:
+    public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
+    short-id: ''
+  client-figerprint: chrome
 - name: 节点11
+  type: vmess
+  server: 2001:bc8:32d7:302::10
+  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  alterId: 0
+  port: 44579
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: ''
+    headers: {}
+- name: 节点12
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -161,18 +173,6 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip19.9447609.xyz
-- name: 节点12
-  type: vmess
-  server: 2001:bc8:32d7:302::10
-  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
-  alterId: 0
-  port: 44579
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: ''
-    headers: {}
 - name: 节点13
   type: vless
   server: 62.210.113.151
@@ -182,16 +182,16 @@ proxies:
   tls: true
 - name: 节点14
   type: vless
-  server: 89.144.35.230
-  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
-  port: 54582
+  server: 62.210.113.151
+  uuid: 59f7ac8f-4a55-42ac-85b8-b3f96871761f
+  port: 64489
   udp: true
   tls: true
 - name: 节点15
   type: vless
-  server: 62.210.113.151
-  uuid: 59f7ac8f-4a55-42ac-85b8-b3f96871761f
-  port: 64489
+  server: 89.144.35.230
+  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
+  port: 54582
   udp: true
   tls: true
 - name: 节点16
