@@ -153,13 +153,6 @@ proxies:
   udp: true
   tls: true
 - name: 节点12
-  type: vless
-  server: 62.210.113.151
-  uuid: 59f7ac8f-4a55-42ac-85b8-b3f96871761f
-  port: 64489
-  udp: true
-  tls: true
-- name: 节点13
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -172,6 +165,13 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip29.9447609.xyz
+- name: 节点13
+  type: vless
+  server: 62.210.113.151
+  uuid: 59f7ac8f-4a55-42ac-85b8-b3f96871761f
+  port: 64489
+  udp: true
+  tls: true
 - name: 节点14
   type: vless
   server: 89.144.35.230
@@ -180,13 +180,6 @@ proxies:
   udp: true
   tls: true
 - name: 节点15
-  type: vless
-  server: 2a14:7584:d097::a
-  uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
-  port: 11330
-  udp: true
-  tls: true
-- name: 节点16
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -199,6 +192,13 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip19.9447609.xyz
+- name: 节点16
+  type: vless
+  server: 2a14:7584:d097::a
+  uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
+  port: 11330
+  udp: true
+  tls: true
 - name: 节点17
   type: hysteria
   server: 45.150.65.154
