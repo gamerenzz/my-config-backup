@@ -186,6 +186,13 @@ proxies:
   udp: true
   tls: true
 - name: 节点15
+  type: vless
+  server: 62.210.113.151
+  uuid: 59f7ac8f-4a55-42ac-85b8-b3f96871761f
+  port: 64489
+  udp: true
+  tls: true
+- name: 节点16
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -198,13 +205,6 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点16
-  type: vless
-  server: 62.210.113.151
-  uuid: 59f7ac8f-4a55-42ac-85b8-b3f96871761f
-  port: 64489
-  udp: true
-  tls: true
 - name: 节点17
   type: vless
   server: 2a14:7584:d097::a
