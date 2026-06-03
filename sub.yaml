@@ -165,6 +165,17 @@ proxies:
   password: dongtaiwang.com
   sni: www.microsoft.com
   skip-cert-verify: true
+- name: Singbox-TUIC-2.json
+  type: tuic
+  server: 89.144.35.232
+  port: 17306
+  uuid: 3ebac90b-6977-47c0-bef5-b2e37554432c
+  password: 3ebac90b-6977-47c0-bef5-b2e37554432c
+  alpn:
+  - h3
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  udp-relay-mode: native
 - name: Singbox-TUIC-1.json
   type: tuic
   server: 163.172.118.224
@@ -287,6 +298,7 @@ proxy-groups:
   - Hys1-3.json
   - Hys2-2.json
   - Hys2-1.json
+  - Singbox-TUIC-2.json
   - Singbox-TUIC-1.json
   - Extra-visa.com
   - Extra-www.visa.com
@@ -314,6 +326,7 @@ proxy-groups:
   - Hys1-3.json
   - Hys2-2.json
   - Hys2-1.json
+  - Singbox-TUIC-2.json
   - Singbox-TUIC-1.json
   - Extra-visa.com
   - Extra-www.visa.com

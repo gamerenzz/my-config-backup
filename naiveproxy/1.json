@@ -1,7 +1,5 @@
-<html>
-<head><title>500 Internal Server Error</title></head>
-<body>
-<center><h1>500 Internal Server Error</h1></center>
-<hr><center>nginx/1.18.0</center>
-</body>
-</html>
+
+{
+  "listen":  "socks://127.0.0.1:1080",
+  "proxy": "https://dongtaiwang.com:dongtaiwang.com@fan.193919.xyz:44000"
+}
