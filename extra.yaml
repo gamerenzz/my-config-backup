@@ -107,7 +107,7 @@ proxies:
   down: 100 Mbps
 - name: 节点7
   type: hysteria2
-  server: 62.210.10.108
+  server: 2001:bc8:32d7:17b::3
   port: '22000'
   password: dongtaiwang.com
   fast-open: true
@@ -127,7 +127,7 @@ proxies:
   down: 100 Mbps
 - name: 节点9
   type: hysteria2
-  server: 2001:bc8:32d7:17b::3
+  server: 62.210.10.108
   port: '22000'
   password: dongtaiwang.com
   fast-open: true
@@ -175,17 +175,22 @@ proxies:
     headers:
       Host: ip19.9447609.xyz
 - name: 节点13
+  type: vmess
+  server: 2001:bc8:32d7:302::10
+  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  alterId: 0
+  port: 44579
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: ''
+    headers: {}
+- name: 节点14
   type: vless
   server: 62.210.113.151
   uuid: f2d9e117-231c-4946-87d8-2cde2222b85d
   port: 45641
-  udp: true
-  tls: true
-- name: 节点14
-  type: vless
-  server: 89.144.35.230
-  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
-  port: 54582
   udp: true
   tls: true
 - name: 节点15
@@ -196,6 +201,13 @@ proxies:
   udp: true
   tls: true
 - name: 节点16
+  type: vless
+  server: 89.144.35.230
+  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
+  port: 54582
+  udp: true
+  tls: true
+- name: 节点17
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -208,25 +220,13 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点17
+- name: 节点18
   type: vless
   server: 2a14:7584:d097::a
   uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
   port: 11330
   udp: true
   tls: true
-- name: 节点18
-  type: vmess
-  server: 2001:bc8:32d7:302::10
-  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
-  alterId: 0
-  port: 44579
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: ''
-    headers: {}
 - name: 节点19
   type: hysteria
   server: 45.150.65.154
