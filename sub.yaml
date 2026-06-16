@@ -165,10 +165,10 @@ proxies:
   skip-cert-verify: true
 - name: Hys2-1.json
   type: hysteria2
-  server: 62.210.10.108
-  port: 22000
+  server: www.838491.xyz
+  port: 13377
   password: dongtaiwang.com
-  sni: www.microsoft.com
+  sni: www.838491.xyz
   skip-cert-verify: true
 - name: Hys2-2.json
   type: hysteria2
