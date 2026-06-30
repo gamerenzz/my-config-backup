@@ -3,7 +3,7 @@
 # 创建存储目录
 mkdir -p clash xray hysteria hysteria2 singbox naiveproxy juicity shadowquic mieru
 
-BASE_URL="https://www.gitlabip.xyz/Alvin9999/PAC/refs/heads/master/backup/img/1/2/ipp"
+BASE_URL="https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp"
 
 # 下载函数：dir_name, count, target_filename
 download_files() {
