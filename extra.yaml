@@ -57,21 +57,6 @@ proxies:
   recv-window: 23068672
 - name: 节点3
   type: hysteria
-  server: 5.83.129.90
-  port: '54177'
-  auth_str: dongtaiwang.com
-  up: 100
-  down: 100
-  fast-open: true
-  protocol: udp
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  recv_window_conn: 57671680
-  recv-window: 230686720
-- name: 节点4
-  type: hysteria
   server: 5.83.129.153
   port: '27626'
   auth_str: github.com/Alvin9999-newpac/fanqiang
@@ -85,6 +70,21 @@ proxies:
     - h3
   recv_window_conn: 5767168
   recv-window: 23068672
+- name: 节点4
+  type: hysteria
+  server: 5.83.129.90
+  port: '54177'
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  recv_window_conn: 57671680
+  recv-window: 230686720
 - name: 节点5
   type: hysteria2
   server: 2001:bc8:32d7:17b::8
@@ -195,16 +195,16 @@ proxies:
   tls: true
 - name: 节点15
   type: vless
-  server: 89.144.35.230
-  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
-  port: 54582
+  server: 62.210.113.151
+  uuid: 59f7ac8f-4a55-42ac-85b8-b3f96871761f
+  port: 64489
   udp: true
   tls: true
 - name: 节点16
   type: vless
-  server: 62.210.113.151
-  uuid: 59f7ac8f-4a55-42ac-85b8-b3f96871761f
-  port: 64489
+  server: 89.144.35.230
+  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
+  port: 54582
   udp: true
   tls: true
 - name: 节点17
@@ -253,18 +253,6 @@ proxies:
   up: 100
   down: 100
 - name: 节点21
-  type: hysteria2
-  server: 2001:bc8:32d7:302::17
-  port: 20088
-  password: dongtaiwang.com
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  protocol: udp
-  up: 100
-  down: 100
-- name: 节点22
   server: 2001:bc8:32d7:302::16
   port: 34997
   type: tuic
@@ -277,6 +265,18 @@ proxies:
   reduce-rtt: true
   udp-relay-mode: native
   congestion-controller: bbr
+- name: 节点22
+  type: hysteria2
+  server: 2001:bc8:32d7:302::17
+  port: 20088
+  password: dongtaiwang.com
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  protocol: udp
+  up: 100
+  down: 100
 - name: visa.com
   server: visa.com
   port: 443
