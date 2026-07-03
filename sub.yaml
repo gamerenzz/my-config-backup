@@ -139,36 +139,12 @@ proxies:
   - h3
   protocol: udp
   skip-cert-verify: true
-- name: Hys1-1.json
-  type: hysteria
-  server: 5.83.129.153
-  port: 20088
-  auth_str: dongtaiwang.com
-  up: 10 Mbps
-  down: 50 Mbps
-  sni: apple.com
-  alpn:
-  - h3
-  protocol: udp
-  skip-cert-verify: true
-- name: Hys1-2.json
-  type: hysteria
-  server: 5.83.129.153
-  port: 27626
-  auth_str: github.com/Alvin9999-newpac/fanqiang
-  up: 10 Mbps
-  down: 50 Mbps
-  sni: bing.com
-  alpn:
-  - h3
-  protocol: udp
-  skip-cert-verify: true
 - name: Hys2-1.json
   type: hysteria2
-  server: www.838491.xyz
-  port: 13377
-  password: dongtaiwang.com
-  sni: www.838491.xyz
+  server: 62.210.27.216
+  port: 60111
+  password: github.com/Alvin9999-newpac/fanqiang
+  sni: bing.com
   skip-cert-verify: true
 - name: Hys2-2.json
   type: hysteria2
@@ -307,8 +283,6 @@ proxy-groups:
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
   - Hys1-3.json
-  - Hys1-1.json
-  - Hys1-2.json
   - Hys2-1.json
   - Hys2-2.json
   - Singbox-TUIC-1.json
@@ -336,8 +310,6 @@ proxy-groups:
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
   - Hys1-3.json
-  - Hys1-1.json
-  - Hys1-2.json
   - Hys2-1.json
   - Hys2-2.json
   - Singbox-TUIC-1.json
