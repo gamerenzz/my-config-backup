@@ -43,36 +43,6 @@ proxies:
 - name: 节点2
   type: hysteria
   server: 5.83.129.153
-  port: '20088'
-  auth_str: dongtaiwang.com
-  up: 100
-  down: 100
-  fast-open: true
-  protocol: udp
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  recv_window_conn: 5767168
-  recv-window: 23068672
-- name: 节点3
-  type: hysteria
-  server: 62.210.70.191
-  port: '23556'
-  auth_str: github.com/Alvin9999-newpac/fanqiang
-  up: 100
-  down: 100
-  fast-open: true
-  protocol: udp
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  recv_window_conn: 57671680
-  recv-window: 230686720
-- name: 节点4
-  type: hysteria
-  server: 5.83.129.153
   port: '27626'
   auth_str: github.com/Alvin9999-newpac/fanqiang
   up: 100
@@ -85,7 +55,7 @@ proxies:
     - h3
   recv_window_conn: 5767168
   recv-window: 23068672
-- name: 节点5
+- name: 节点3
   type: hysteria
   server: 5.83.129.90
   port: '54177'
@@ -95,6 +65,36 @@ proxies:
   fast-open: true
   protocol: udp
   sni: apple.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  recv_window_conn: 57671680
+  recv-window: 230686720
+- name: 节点4
+  type: hysteria
+  server: 5.83.129.153
+  port: '20088'
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  recv_window_conn: 5767168
+  recv-window: 23068672
+- name: 节点5
+  type: hysteria
+  server: 62.210.70.191
+  port: '23556'
+  auth_str: github.com/Alvin9999-newpac/fanqiang
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: bing.com
   skip-cert-verify: true
   alpn:
     - h3
