@@ -1,5 +1,5 @@
 {
-"server": "5.83.129.90:54177",
+"server": "62.210.70.191:23556",
 "protocol": "udp",
 "up_mbps": 11,
 "down_mbps": 55,
@@ -9,9 +9,9 @@
 "disable_udp": false
 },
 "obfs": "",
-"auth_str": "dongtaiwang.com",
+"auth_str": "github.com/Alvin9999-newpac/fanqiang",
 "alpn": "h3",
-"server_name": "apple.com",
+"server_name": "bing.com",
 "insecure": true,
 "recv_window_conn": 57671680,
 "recv_window": 230686720,

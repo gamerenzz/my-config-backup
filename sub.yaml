@@ -139,6 +139,18 @@ proxies:
   - h3
   protocol: udp
   skip-cert-verify: true
+- name: Hys1-1.json
+  type: hysteria
+  server: 62.210.70.191
+  port: 23556
+  auth_str: github.com/Alvin9999-newpac/fanqiang
+  up: 10 Mbps
+  down: 50 Mbps
+  sni: bing.com
+  alpn:
+  - h3
+  protocol: udp
+  skip-cert-verify: true
 - name: Hys2-1.json
   type: hysteria2
   server: 62.210.27.216
@@ -283,6 +295,7 @@ proxy-groups:
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
   - Hys1-3.json
+  - Hys1-1.json
   - Hys2-1.json
   - Hys2-2.json
   - Singbox-TUIC-1.json
@@ -310,6 +323,7 @@ proxy-groups:
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
   - Hys1-3.json
+  - Hys1-1.json
   - Hys2-1.json
   - Hys2-2.json
   - Singbox-TUIC-1.json
