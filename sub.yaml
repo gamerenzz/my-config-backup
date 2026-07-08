@@ -65,68 +65,20 @@ proxies:
   congestion-controller: bbr
 - name: VLESS-Reality-3.json
   type: vless
-  server: 89.144.35.230
-  port: 54582
-  uuid: 5cfc52bc-e701-4160-89df-930a0c040576
+  server: 62.210.70.194
+  port: 37783
+  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
   cipher: auto
   tls: true
   udp: true
-  servername: apple.com
+  servername: www.yahoo.com
   network: xhttp
   reality-opts:
-    public-key: kfw5DgkyKiovC3dzb-o2PUYnZPnbYvbx2IwERUv9czY
-    short-id: 225e2cc8
+    public-key: tQeEamJmYVUUfjRLX7ETvMnPj4DrHzRhR5TI684oYgg
+    short-id: 21569dd6
   client-fingerprint: chrome
   xhttp-opts:
-    path: 5cfc52bc-e701-4160-89df-930a0c040576-xh
-- name: VLESS-Reality-1.json
-  type: vless
-  server: 62.210.113.151
-  port: 45641
-  uuid: f2d9e117-231c-4946-87d8-2cde2222b85d
-  cipher: auto
-  tls: true
-  udp: true
-  servername: www.lovelive-anime.jp
-  network: xhttp
-  reality-opts:
-    public-key: Nw-FuuCWzFZvQtQbJjDCYJpCKyO8cuvibbTGBeoZRyo
-    short-id: 1ea5bfb5
-  client-fingerprint: chrome
-  xhttp-opts:
-    path: /SSSuqkzN
-- name: VLESS-Reality-2.json
-  type: vless
-  server: 62.210.113.151
-  port: 64489
-  uuid: 59f7ac8f-4a55-42ac-85b8-b3f96871761f
-  cipher: auto
-  tls: true
-  udp: true
-  servername: www.lovelive-anime.jp
-  network: xhttp
-  reality-opts:
-    public-key: Nw-FuuCWzFZvQtQbJjDCYJpCKyO8cuvibbTGBeoZRyo
-    short-id: 1ea5bfb5
-  client-fingerprint: chrome
-  xhttp-opts:
-    path: /PGEulXbn
-- name: VLESS-Reality-4.json
-  type: vless
-  server: 2a14:7584:d097::a
-  port: 11330
-  uuid: 53d74aab-6471-4c1b-ace7-fac837d1bfbd
-  cipher: auto
-  tls: true
-  udp: true
-  servername: toarumajutsunoindex.fandom.com
-  network: xhttp
-  reality-opts:
-    public-key: 3HaD5Ztk3X4gi3aJLVesV6KSJTW2YGG-hvGD3ZumJkE
-    short-id: fa789b2f5ff56959
-  client-fingerprint: chrome
-  xhttp-opts:
-    path: /alvin9999.com
+    path: /OCrp5Ajs
 - name: Hys1-3.json
   type: hysteria
   server: 5.83.129.90
@@ -291,9 +243,6 @@ proxy-groups:
   - Clash-tuic-2
   - Clash-tuic-3
   - VLESS-Reality-3.json
-  - VLESS-Reality-1.json
-  - VLESS-Reality-2.json
-  - VLESS-Reality-4.json
   - Hys1-3.json
   - Hys1-1.json
   - Hys2-1.json
@@ -319,9 +268,6 @@ proxy-groups:
   - Clash-tuic-2
   - Clash-tuic-3
   - VLESS-Reality-3.json
-  - VLESS-Reality-1.json
-  - VLESS-Reality-2.json
-  - VLESS-Reality-4.json
   - Hys1-3.json
   - Hys1-1.json
   - Hys2-1.json
