@@ -63,7 +63,7 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
-- name: VLESS-Reality-3.json
+- name: VLESS-Reality-1.json
   type: vless
   server: 62.210.70.194
   port: 37783
@@ -242,7 +242,7 @@ proxy-groups:
   - Clash-tuic-1
   - Clash-tuic-2
   - Clash-tuic-3
-  - VLESS-Reality-3.json
+  - VLESS-Reality-1.json
   - Hys1-3.json
   - Hys1-1.json
   - Hys2-1.json
@@ -267,7 +267,7 @@ proxy-groups:
   - Clash-tuic-1
   - Clash-tuic-2
   - Clash-tuic-3
-  - VLESS-Reality-3.json
+  - VLESS-Reality-1.json
   - Hys1-3.json
   - Hys1-1.json
   - Hys2-1.json
