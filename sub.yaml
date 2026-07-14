@@ -63,6 +63,22 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
+- name: VLESS-Reality-3.json
+  type: vless
+  server: 2001:bc8:32d7:302::14
+  port: 37783
+  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
+  cipher: auto
+  tls: true
+  udp: true
+  servername: www.yahoo.com
+  network: xhttp
+  reality-opts:
+    public-key: tQeEamJmYVUUfjRLX7ETvMnPj4DrHzRhR5TI684oYgg
+    short-id: 21569dd6
+  client-fingerprint: chrome
+  xhttp-opts:
+    path: /OCrp5Ajs
 - name: VLESS-Reality-1.json
   type: vless
   server: 62.210.70.194
@@ -242,6 +258,7 @@ proxy-groups:
   - Clash-tuic-1
   - Clash-tuic-2
   - Clash-tuic-3
+  - VLESS-Reality-3.json
   - VLESS-Reality-1.json
   - Hys1-3.json
   - Hys1-1.json
@@ -267,6 +284,7 @@ proxy-groups:
   - Clash-tuic-1
   - Clash-tuic-2
   - Clash-tuic-3
+  - VLESS-Reality-3.json
   - VLESS-Reality-1.json
   - Hys1-3.json
   - Hys1-1.json
