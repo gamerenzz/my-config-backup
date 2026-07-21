@@ -71,16 +71,6 @@ proxies:
   recv_window_conn: 5767168
   recv-window: 23068672
 - name: 节点4
-  type: hysteria2
-  server: 2001:bc8:32d7:17b::8
-  port: '22000'
-  password: dongtaiwang.com
-  fast-open: true
-  sni: apple.com
-  skip-cert-verify: true
-  up: 100 Mbps
-  down: 100 Mbps
-- name: 节点5
   type: hysteria
   server: 5.83.129.90
   port: '54177'
@@ -95,6 +85,16 @@ proxies:
     - h3
   recv_window_conn: 57671680
   recv-window: 230686720
+- name: 节点5
+  type: hysteria2
+  server: 2001:bc8:32d7:17b::8
+  port: '22000'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: apple.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
 - name: 节点6
   type: hysteria
   server: 5.83.129.153
@@ -178,6 +178,18 @@ proxies:
   client-figerprint: chrome
 - name: 节点13
   type: vmess
+  server: 2001:bc8:32d7:302::10
+  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  alterId: 0
+  port: 44579
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: ''
+    headers: {}
+- name: 节点14
+  type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
   alterId: 0
@@ -189,18 +201,6 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip19.9447609.xyz
-- name: 节点14
-  type: vmess
-  server: 2001:bc8:32d7:302::10
-  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
-  alterId: 0
-  port: 44579
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: ''
-    headers: {}
 - name: 节点15
   type: vless
   server: 62.210.70.194
@@ -209,6 +209,13 @@ proxies:
   udp: true
   tls: true
 - name: 节点16
+  type: vless
+  server: 2001:bc8:32d7:302::14
+  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
+  port: 37783
+  udp: true
+  tls: true
+- name: 节点17
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -221,13 +228,6 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点17
-  type: vless
-  server: 2001:bc8:32d7:302::14
-  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
-  port: 37783
-  udp: true
-  tls: true
 - name: 节点18
   type: hysteria
   server: 45.150.65.154
