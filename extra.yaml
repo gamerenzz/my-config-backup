@@ -57,21 +57,6 @@ proxies:
   recv-window: 230686720
 - name: 节点3
   type: hysteria
-  server: 5.83.129.90
-  port: '54177'
-  auth_str: dongtaiwang.com
-  up: 100
-  down: 100
-  fast-open: true
-  protocol: udp
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  recv_window_conn: 57671680
-  recv-window: 230686720
-- name: 节点4
-  type: hysteria
   server: 5.83.129.153
   port: '20088'
   auth_str: dongtaiwang.com
@@ -85,6 +70,21 @@ proxies:
     - h3
   recv_window_conn: 5767168
   recv-window: 23068672
+- name: 节点4
+  type: hysteria
+  server: 5.83.129.90
+  port: '54177'
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  recv_window_conn: 57671680
+  recv-window: 230686720
 - name: 节点5
   type: hysteria
   server: 5.83.129.153
@@ -141,6 +141,16 @@ proxies:
   up: 100 Mbps
   down: 100 Mbps
 - name: 节点10
+  type: hysteria2
+  server: 62.210.147.2
+  port: '43115'
+  password: github.com/Alvin9999-newpac/fanqiang
+  fast-open: true
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
+- name: 节点11
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -153,30 +163,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip29.9447609.xyz
-- name: 节点11
-  type: hysteria2
-  server: 62.210.147.2
-  port: '43115'
-  password: github.com/Alvin9999-newpac/fanqiang
-  fast-open: true
-  sni: www.microsoft.com
-  skip-cert-verify: true
-  up: 100 Mbps
-  down: 100 Mbps
 - name: 节点12
-  type: vless
-  server: 2001:bc8:32d7:302::13
-  uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
-  port: 34324
-  udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: dash.cloudflare.com
-  reality-opts:
-    public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
-    short-id: ''
-  client-figerprint: chrome
-- name: 节点13
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -189,6 +176,19 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip19.9447609.xyz
+- name: 节点13
+  type: vless
+  server: 2001:bc8:32d7:302::13
+  uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
+  port: 34324
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: dash.cloudflare.com
+  reality-opts:
+    public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
+    short-id: ''
+  client-figerprint: chrome
 - name: 节点14
   type: vless
   server: 62.210.70.194
