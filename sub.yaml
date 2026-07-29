@@ -133,17 +133,6 @@ proxies:
   password: github.com/Alvin9999-newpac/fanqiang
   sni: www.microsoft.com
   skip-cert-verify: true
-- name: Singbox-TUIC-1.json
-  type: tuic
-  server: 195.154.41.99
-  port: 33888
-  uuid: 9adb384a-0f16-4501-a8f3-b6b2556fce87
-  password: dongtaiwang.com
-  alpn:
-  - h3
-  sni: bing.com
-  skip-cert-verify: true
-  udp-relay-mode: native
 - name: Extra-visa.com
   server: visa.com
   port: 443
@@ -253,7 +242,6 @@ proxy-groups:
   - Hys1-3.json
   - Hys2-1.json
   - Hys2-2.json
-  - Singbox-TUIC-1.json
   - Extra-visa.com
   - Extra-www.visa.com
   - Extra-www.visa.cn
@@ -278,7 +266,6 @@ proxy-groups:
   - Hys1-3.json
   - Hys2-1.json
   - Hys2-2.json
-  - Singbox-TUIC-1.json
   - Extra-visa.com
   - Extra-www.visa.com
   - Extra-www.visa.cn
