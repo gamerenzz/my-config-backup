@@ -25,20 +25,7 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
-- name: Clash-tuic-1
-  server: 5.178.101.117
-  port: 30006
-  type: tuic
-  uuid: 36106e0f-4d9a-470b-a3fd-535f3b7a1e92
-  password: dongtaiwang.com
-  sni: www.microsoft.com
-  alpn:
-  - h3
-  request-timeout: 8000
-  udp-relay-mode: native
-  skip-cert-verify: true
-  congestion-controller: bbr
-- name: Clash-hysteria-2
+- name: Clash-hysteria-1
   type: hysteria
   server: 2a14:7584:d097::a
   port: 54177
@@ -50,13 +37,26 @@ proxies:
   protocol: udp
   up: 11 Mbps
   down: 55 Mbps
-- name: Clash-tuic-3
+- name: Clash-tuic-2
   server: 163.172.116.154
   port: 33887
   type: tuic
   uuid: 9adb384a-0f16-4501-a8f3-b6b2556fce87
   password: dongtaiwang.com
   sni: bing.com
+  alpn:
+  - h3
+  request-timeout: 8000
+  udp-relay-mode: native
+  skip-cert-verify: true
+  congestion-controller: bbr
+- name: Clash-tuic-3
+  server: 5.178.101.117
+  port: 30006
+  type: tuic
+  uuid: 36106e0f-4d9a-470b-a3fd-535f3b7a1e92
+  password: dongtaiwang.com
+  sni: www.microsoft.com
   alpn:
   - h3
   request-timeout: 8000
@@ -79,7 +79,7 @@ proxies:
   client-fingerprint: chrome
   xhttp-opts:
     path: /OCrp5Ajs
-- name: VLESS-Reality-4.json
+- name: VLESS-Reality-3.json
   type: vless
   server: 2001:bc8:32d7:302::14
   port: 37783
@@ -107,7 +107,7 @@ proxies:
   - h3
   protocol: udp
   skip-cert-verify: true
-- name: Hys1-4.json
+- name: Hys1-3.json
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -233,13 +233,13 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - Clash-tuic-0
-  - Clash-tuic-1
-  - Clash-hysteria-2
+  - Clash-hysteria-1
+  - Clash-tuic-2
   - Clash-tuic-3
   - VLESS-Reality-1.json
-  - VLESS-Reality-4.json
+  - VLESS-Reality-3.json
   - Hys1-1.json
-  - Hys1-4.json
+  - Hys1-3.json
   - Hys2-1.json
   - Hys2-2.json
   - Extra-visa.com
@@ -257,13 +257,13 @@ proxy-groups:
   interval: 300
   proxies:
   - Clash-tuic-0
-  - Clash-tuic-1
-  - Clash-hysteria-2
+  - Clash-hysteria-1
+  - Clash-tuic-2
   - Clash-tuic-3
   - VLESS-Reality-1.json
-  - VLESS-Reality-4.json
+  - VLESS-Reality-3.json
   - Hys1-1.json
-  - Hys1-4.json
+  - Hys1-3.json
   - Hys2-1.json
   - Hys2-2.json
   - Extra-visa.com
