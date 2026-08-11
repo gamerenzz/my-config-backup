@@ -119,20 +119,6 @@ proxies:
   - h3
   protocol: udp
   skip-cert-verify: true
-- name: Hys2-1.json
-  type: hysteria2
-  server: 62.210.7.139
-  port: 60111
-  password: github.com/Alvin9999-newpac/fanqiang
-  sni: bing.com
-  skip-cert-verify: true
-- name: Hys2-2.json
-  type: hysteria2
-  server: 62.210.147.2
-  port: 43115
-  password: github.com/Alvin9999-newpac/fanqiang
-  sni: www.microsoft.com
-  skip-cert-verify: true
 - name: Extra-visa.com
   server: visa.com
   port: 443
@@ -240,8 +226,6 @@ proxy-groups:
   - VLESS-Reality-3.json
   - Hys1-1.json
   - Hys1-3.json
-  - Hys2-1.json
-  - Hys2-2.json
   - Extra-visa.com
   - Extra-www.visa.com
   - Extra-www.visa.cn
@@ -264,8 +248,6 @@ proxy-groups:
   - VLESS-Reality-3.json
   - Hys1-1.json
   - Hys1-3.json
-  - Hys2-1.json
-  - Hys2-2.json
   - Extra-visa.com
   - Extra-www.visa.com
   - Extra-www.visa.cn

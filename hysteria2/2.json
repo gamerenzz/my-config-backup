@@ -1,6 +1,6 @@
 {
-  "server": "62.210.147.2:43115",
-  "auth": "github.com/Alvin9999-newpac/fanqiang",
+  "server": "[2001:bc8:32d7:17b::3]:22000",
+  "auth": "dongtaiwang.com",
   "bandwidth": {
     "up": "11 mbps",
     "down": "55 mbps"
@@ -24,4 +24,3 @@
     }
   }
 }
-
