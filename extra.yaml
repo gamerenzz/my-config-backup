@@ -82,21 +82,6 @@ proxies:
   down: 100 Mbps
 - name: 节点5
   type: hysteria
-  server: 5.83.129.90
-  port: '54177'
-  auth_str: dongtaiwang.com
-  up: 100
-  down: 100
-  fast-open: true
-  protocol: udp
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  recv_window_conn: 57671680
-  recv-window: 230686720
-- name: 节点6
-  type: hysteria
   server: 5.83.129.153
   port: '27626'
   auth_str: github.com/Alvin9999-newpac/fanqiang
@@ -110,6 +95,21 @@ proxies:
     - h3
   recv_window_conn: 5767168
   recv-window: 23068672
+- name: 节点6
+  type: hysteria
+  server: 5.83.129.90
+  port: '54177'
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  recv_window_conn: 57671680
+  recv-window: 230686720
 - name: 节点7
   type: hysteria2
   server: 2001:bc8:32d7:302::11
@@ -189,6 +189,13 @@ proxies:
   udp: true
   tls: true
 - name: 节点14
+  type: vless
+  server: 2001:bc8:32d7:302::14
+  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
+  port: 37783
+  udp: true
+  tls: true
+- name: 节点15
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -201,13 +208,6 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点15
-  type: vless
-  server: 2001:bc8:32d7:302::14
-  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
-  port: 37783
-  udp: true
-  tls: true
 - name: 节点16
   type: hysteria
   server: 45.150.65.154
