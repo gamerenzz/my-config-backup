@@ -57,21 +57,6 @@ proxies:
   recv-window: 230686720
 - name: 节点3
   type: hysteria
-  server: 5.83.129.153
-  port: '20088'
-  auth_str: dongtaiwang.com
-  up: 100
-  down: 100
-  fast-open: true
-  protocol: udp
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  recv_window_conn: 5767168
-  recv-window: 23068672
-- name: 节点4
-  type: hysteria
   server: 5.83.129.90
   port: '54177'
   auth_str: dongtaiwang.com
@@ -85,6 +70,21 @@ proxies:
     - h3
   recv_window_conn: 57671680
   recv-window: 230686720
+- name: 节点4
+  type: hysteria
+  server: 5.83.129.153
+  port: '20088'
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  recv_window_conn: 5767168
+  recv-window: 23068672
 - name: 节点5
   type: hysteria2
   server: 2001:bc8:32d7:17b::8
@@ -96,16 +96,6 @@ proxies:
   up: 100 Mbps
   down: 100 Mbps
 - name: 节点6
-  type: hysteria2
-  server: 2001:bc8:32d7:302::11
-  port: '20088'
-  password: dongtaiwang.com
-  fast-open: true
-  sni: apple.com
-  skip-cert-verify: true
-  up: 100 Mbps
-  down: 100 Mbps
-- name: 节点7
   type: hysteria
   server: 5.83.129.153
   port: '27626'
@@ -120,6 +110,16 @@ proxies:
     - h3
   recv_window_conn: 5767168
   recv-window: 23068672
+- name: 节点7
+  type: hysteria2
+  server: 2001:bc8:32d7:302::11
+  port: '20088'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: apple.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
 - name: 节点8
   type: hysteria2
   server: 2001:bc8:32d7:17b::3
@@ -189,6 +189,13 @@ proxies:
   udp: true
   tls: true
 - name: 节点14
+  type: vless
+  server: 2001:bc8:32d7:302::14
+  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
+  port: 37783
+  udp: true
+  tls: true
+- name: 节点15
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -201,13 +208,6 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点15
-  type: vless
-  server: 2001:bc8:32d7:302::14
-  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
-  port: 37783
-  udp: true
-  tls: true
 - name: 节点16
   type: hysteria
   server: 45.150.65.154
