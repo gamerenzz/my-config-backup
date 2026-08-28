@@ -144,19 +144,6 @@ proxies:
     headers:
       Host: ip29.9447609.xyz
 - name: 节点10
-  type: vmess
-  server: 104.21.238.35
-  uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
-  alterId: 0
-  port: 2086
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: github.com/Alvin9999
-    headers:
-      Host: ip19.9447609.xyz
-- name: 节点11
   type: vless
   server: 2001:bc8:32d7:302::13
   uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
@@ -169,6 +156,19 @@ proxies:
     public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
     short-id: ''
   client-figerprint: chrome
+- name: 节点11
+  type: vmess
+  server: 104.21.238.35
+  uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
+  alterId: 0
+  port: 2086
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: github.com/Alvin9999
+    headers:
+      Host: ip19.9447609.xyz
 - name: 节点12
   type: vless
   server: 62.210.70.194
@@ -234,6 +234,18 @@ proxies:
   up: 100
   down: 100
 - name: 节点18
+  type: hysteria2
+  server: 2001:bc8:32d7:302::17
+  port: 20088
+  password: dongtaiwang.com
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  protocol: udp
+  up: 100
+  down: 100
+- name: 节点19
   server: 2001:bc8:32d7:302::16
   port: 34997
   type: tuic
@@ -246,18 +258,6 @@ proxies:
   reduce-rtt: true
   udp-relay-mode: native
   congestion-controller: bbr
-- name: 节点19
-  type: hysteria2
-  server: 2001:bc8:32d7:302::17
-  port: 20088
-  password: dongtaiwang.com
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  protocol: udp
-  up: 100
-  down: 100
 - name: visa.com
   server: visa.com
   port: 443
