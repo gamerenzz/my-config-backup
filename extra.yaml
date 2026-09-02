@@ -58,13 +58,13 @@ proxies:
 - name: 节点3
   type: hysteria
   server: 5.83.129.153
-  port: '27626'
-  auth_str: github.com/Alvin9999-newpac/fanqiang
+  port: '20088'
+  auth_str: dongtaiwang.com
   up: 100
   down: 100
   fast-open: true
   protocol: udp
-  sni: bing.com
+  sni: apple.com
   skip-cert-verify: true
   alpn:
     - h3
@@ -73,13 +73,13 @@ proxies:
 - name: 节点4
   type: hysteria
   server: 5.83.129.153
-  port: '20088'
-  auth_str: dongtaiwang.com
+  port: '27626'
+  auth_str: github.com/Alvin9999-newpac/fanqiang
   up: 100
   down: 100
   fast-open: true
   protocol: udp
-  sni: apple.com
+  sni: bing.com
   skip-cert-verify: true
   alpn:
     - h3
@@ -144,19 +144,6 @@ proxies:
     headers:
       Host: ip29.9447609.xyz
 - name: 节点10
-  type: vmess
-  server: 104.21.238.35
-  uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
-  alterId: 0
-  port: 2086
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: github.com/Alvin9999
-    headers:
-      Host: ip19.9447609.xyz
-- name: 节点11
   type: vless
   server: 2001:bc8:32d7:302::13
   uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
@@ -169,6 +156,19 @@ proxies:
     public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
     short-id: ''
   client-figerprint: chrome
+- name: 节点11
+  type: vmess
+  server: 104.21.238.35
+  uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
+  alterId: 0
+  port: 2086
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: github.com/Alvin9999
+    headers:
+      Host: ip19.9447609.xyz
 - name: 节点12
   type: vmess
   server: 2001:bc8:32d7:302::10
