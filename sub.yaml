@@ -13,31 +13,6 @@ dns:
   - 119.29.29.29
 proxies:
 - name: Clash-tuic-0
-  server: 163.172.116.154
-  port: 33887
-  type: tuic
-  uuid: 9adb384a-0f16-4501-a8f3-b6b2556fce87
-  password: dongtaiwang.com
-  sni: bing.com
-  alpn:
-  - h3
-  request-timeout: 8000
-  udp-relay-mode: native
-  skip-cert-verify: true
-  congestion-controller: bbr
-- name: Clash-hysteria-1
-  type: hysteria
-  server: 2a14:7584:d097::a
-  port: 54177
-  auth-str: dongtaiwang.com
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  protocol: udp
-  up: 11 Mbps
-  down: 55 Mbps
-- name: Clash-tuic-2
   server: 5.178.101.117
   port: 30006
   type: tuic
@@ -50,7 +25,7 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
-- name: Clash-tuic-3
+- name: Clash-tuic-1
   server: ip1.758733.xyz
   port: 10088
   type: tuic
@@ -63,6 +38,31 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
+- name: Clash-tuic-2
+  server: 163.172.116.154
+  port: 33887
+  type: tuic
+  uuid: 9adb384a-0f16-4501-a8f3-b6b2556fce87
+  password: dongtaiwang.com
+  sni: bing.com
+  alpn:
+  - h3
+  request-timeout: 8000
+  udp-relay-mode: native
+  skip-cert-verify: true
+  congestion-controller: bbr
+- name: Clash-hysteria-3
+  type: hysteria
+  server: 2a14:7584:d097::a
+  port: 54177
+  auth-str: dongtaiwang.com
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  protocol: udp
+  up: 11 Mbps
+  down: 55 Mbps
 - name: VLESS-Reality-2.json
   type: vless
   server: 62.210.70.194
@@ -219,9 +219,9 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - Clash-tuic-0
-  - Clash-hysteria-1
+  - Clash-tuic-1
   - Clash-tuic-2
-  - Clash-tuic-3
+  - Clash-hysteria-3
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
   - Hys1-2.json
@@ -241,9 +241,9 @@ proxy-groups:
   interval: 300
   proxies:
   - Clash-tuic-0
-  - Clash-hysteria-1
+  - Clash-tuic-1
   - Clash-tuic-2
-  - Clash-tuic-3
+  - Clash-hysteria-3
   - VLESS-Reality-2.json
   - VLESS-Reality-4.json
   - Hys1-2.json
