@@ -12,7 +12,19 @@ dns:
   - 223.5.5.5
   - 119.29.29.29
 proxies:
-- name: Clash-tuic-0
+- name: Clash-hysteria-0
+  type: hysteria
+  server: 2a14:7584:d097::a
+  port: 54177
+  auth-str: dongtaiwang.com
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  protocol: udp
+  up: 11 Mbps
+  down: 55 Mbps
+- name: Clash-tuic-1
   server: 5.178.101.117
   port: 30006
   type: tuic
@@ -25,7 +37,7 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
-- name: Clash-tuic-1
+- name: Clash-tuic-2
   server: ip1.758733.xyz
   port: 10088
   type: tuic
@@ -38,7 +50,7 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
-- name: Clash-tuic-2
+- name: Clash-tuic-3
   server: 163.172.116.154
   port: 33887
   type: tuic
@@ -51,19 +63,7 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
-- name: Clash-hysteria-3
-  type: hysteria
-  server: 2a14:7584:d097::a
-  port: 54177
-  auth-str: dongtaiwang.com
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  protocol: udp
-  up: 11 Mbps
-  down: 55 Mbps
-- name: VLESS-Reality-2.json
+- name: VLESS-Reality-1.json
   type: vless
   server: 62.210.70.194
   port: 37783
@@ -79,7 +79,7 @@ proxies:
   client-fingerprint: chrome
   xhttp-opts:
     path: /OCrp5Ajs
-- name: VLESS-Reality-4.json
+- name: VLESS-Reality-3.json
   type: vless
   server: 2001:bc8:32d7:302::14
   port: 37783
@@ -95,7 +95,7 @@ proxies:
   client-fingerprint: chrome
   xhttp-opts:
     path: /OCrp5Ajs
-- name: Hys1-2.json
+- name: Hys1-1.json
   type: hysteria
   server: 62.210.70.191
   port: 23556
@@ -107,7 +107,7 @@ proxies:
   - h3
   protocol: udp
   skip-cert-verify: true
-- name: Hys1-4.json
+- name: Hys1-3.json
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -218,14 +218,14 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - Clash-tuic-0
+  - Clash-hysteria-0
   - Clash-tuic-1
   - Clash-tuic-2
-  - Clash-hysteria-3
-  - VLESS-Reality-2.json
-  - VLESS-Reality-4.json
-  - Hys1-2.json
-  - Hys1-4.json
+  - Clash-tuic-3
+  - VLESS-Reality-1.json
+  - VLESS-Reality-3.json
+  - Hys1-1.json
+  - Hys1-3.json
   - Extra-visa.com
   - Extra-www.visa.com
   - Extra-www.visa.cn
@@ -240,14 +240,14 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - Clash-tuic-0
+  - Clash-hysteria-0
   - Clash-tuic-1
   - Clash-tuic-2
-  - Clash-hysteria-3
-  - VLESS-Reality-2.json
-  - VLESS-Reality-4.json
-  - Hys1-2.json
-  - Hys1-4.json
+  - Clash-tuic-3
+  - VLESS-Reality-1.json
+  - VLESS-Reality-3.json
+  - Hys1-1.json
+  - Hys1-3.json
   - Extra-visa.com
   - Extra-www.visa.com
   - Extra-www.visa.cn
