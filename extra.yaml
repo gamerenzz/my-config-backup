@@ -58,13 +58,13 @@ proxies:
 - name: 节点3
   type: hysteria
   server: 5.83.129.153
-  port: '27626'
-  auth_str: github.com/Alvin9999-newpac/fanqiang
+  port: '20088'
+  auth_str: dongtaiwang.com
   up: 100
   down: 100
   fast-open: true
   protocol: udp
-  sni: bing.com
+  sni: apple.com
   skip-cert-verify: true
   alpn:
     - h3
@@ -98,13 +98,13 @@ proxies:
 - name: 节点6
   type: hysteria
   server: 5.83.129.153
-  port: '20088'
-  auth_str: dongtaiwang.com
+  port: '27626'
+  auth_str: github.com/Alvin9999-newpac/fanqiang
   up: 100
   down: 100
   fast-open: true
   protocol: udp
-  sni: apple.com
+  sni: bing.com
   skip-cert-verify: true
   alpn:
     - h3
@@ -158,6 +158,18 @@ proxies:
       Host: ip29.9447609.xyz
 - name: 节点11
   type: vmess
+  server: 2001:bc8:32d7:302::10
+  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  alterId: 0
+  port: 44579
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: ''
+    headers: {}
+- name: 节点12
+  type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
   alterId: 0
@@ -169,18 +181,6 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip19.9447609.xyz
-- name: 节点12
-  type: vmess
-  server: 2001:bc8:32d7:302::10
-  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
-  alterId: 0
-  port: 44579
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: ''
-    headers: {}
 - name: 节点13
   type: vless
   server: 62.210.70.194
