@@ -65,22 +65,6 @@ proxies:
   congestion-controller: bbr
 - name: VLESS-Reality-1.json
   type: vless
-  server: 62.210.70.194
-  port: 37783
-  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
-  cipher: auto
-  tls: true
-  udp: true
-  servername: www.yahoo.com
-  network: xhttp
-  reality-opts:
-    public-key: tQeEamJmYVUUfjRLX7ETvMnPj4DrHzRhR5TI684oYgg
-    short-id: 21569dd6
-  client-fingerprint: chrome
-  xhttp-opts:
-    path: /OCrp5Ajs
-- name: VLESS-Reality-3.json
-  type: vless
   server: 2001:bc8:32d7:302::14
   port: 37783
   uuid: a289c660-1b12-432b-a06c-c2ae469272b0
@@ -97,12 +81,12 @@ proxies:
     path: /OCrp5Ajs
 - name: Hys1-1.json
   type: hysteria
-  server: 62.210.70.191
-  port: 23556
-  auth_str: github.com/Alvin9999-newpac/fanqiang
+  server: 107.149.207.185
+  port: 443
+  auth_str: dongtaiwang.com
   up: 10 Mbps
   down: 50 Mbps
-  sni: bing.com
+  sni: www.bing.com
   alpn:
   - h3
   protocol: udp
@@ -223,7 +207,6 @@ proxy-groups:
   - Clash-tuic-2
   - Clash-tuic-3
   - VLESS-Reality-1.json
-  - VLESS-Reality-3.json
   - Hys1-1.json
   - Hys1-3.json
   - Extra-visa.com
@@ -245,7 +228,6 @@ proxy-groups:
   - Clash-tuic-2
   - Clash-tuic-3
   - VLESS-Reality-1.json
-  - VLESS-Reality-3.json
   - Hys1-1.json
   - Hys1-3.json
   - Extra-visa.com
