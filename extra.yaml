@@ -126,6 +126,13 @@ proxies:
     path: ''
     headers: {}
 - name: 节点9
+  type: vless
+  server: 2001:bc8:32d7:302::14
+  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
+  port: 37783
+  udp: true
+  tls: true
+- name: 节点10
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -138,27 +145,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip29.9447609.xyz
-- name: 节点10
-  type: vless
-  server: 2001:bc8:32d7:302::14
-  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
-  port: 37783
-  udp: true
-  tls: true
 - name: 节点11
-  type: hysteria
-  server: 45.150.65.154
-  port: 47119
-  auth_str: dongtaiwang.com
-  up: 100
-  down: 100
-  fast-open: true
-  protocol: udp
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-- name: 节点12
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -171,6 +158,19 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip19.9447609.xyz
+- name: 节点12
+  type: hysteria
+  server: 45.150.65.154
+  port: 47119
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+    - h3
 - name: 节点13
   type: hysteria
   server: 5.83.129.90
