@@ -42,6 +42,21 @@ proxies:
   recv-window: 276824064
 - name: 节点2
   type: hysteria
+  server: 137.175.82.44
+  port: '443'
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
+  fast-open: true
+  protocol: udp
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+    - h3
+  recv_window_conn: 57671680
+  recv-window: 230686720
+- name: 节点3
+  type: hysteria
   server: 107.149.207.185
   port: '443'
   auth_str: dongtaiwang.com
@@ -50,21 +65,6 @@ proxies:
   fast-open: true
   protocol: udp
   sni: www.bing.com
-  skip-cert-verify: true
-  alpn:
-    - h3
-  recv_window_conn: 57671680
-  recv-window: 230686720
-- name: 节点3
-  type: hysteria
-  server: 5.83.129.90
-  port: '54177'
-  auth_str: dongtaiwang.com
-  up: 100
-  down: 100
-  fast-open: true
-  protocol: udp
-  sni: apple.com
   skip-cert-verify: true
   alpn:
     - h3
@@ -81,15 +81,20 @@ proxies:
   up: 100 Mbps
   down: 100 Mbps
 - name: 节点5
-  type: hysteria2
-  server: 2001:bc8:32d7:17b::3
-  port: '22000'
-  password: dongtaiwang.com
+  type: hysteria
+  server: 5.83.129.90
+  port: '54177'
+  auth_str: dongtaiwang.com
+  up: 100
+  down: 100
   fast-open: true
-  sni: www.microsoft.com
+  protocol: udp
+  sni: apple.com
   skip-cert-verify: true
-  up: 100 Mbps
-  down: 100 Mbps
+  alpn:
+    - h3
+  recv_window_conn: 57671680
+  recv-window: 230686720
 - name: 节点6
   type: hysteria2
   server: 2001:bc8:32d7:302::11
@@ -101,18 +106,15 @@ proxies:
   up: 100 Mbps
   down: 100 Mbps
 - name: 节点7
-  type: vmess
-  server: 104.21.238.35
-  uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
-  alterId: 0
-  port: 2086
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: github.com/Alvin9999
-    headers:
-      Host: ip29.9447609.xyz
+  type: hysteria2
+  server: 2001:bc8:32d7:17b::3
+  port: '22000'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
 - name: 节点8
   type: vless
   server: 2001:bc8:32d7:302::13
@@ -128,6 +130,19 @@ proxies:
   client-figerprint: chrome
 - name: 节点9
   type: vmess
+  server: 104.21.238.35
+  uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
+  alterId: 0
+  port: 2086
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: github.com/Alvin9999
+    headers:
+      Host: ip29.9447609.xyz
+- name: 节点10
+  type: vmess
   server: 2001:bc8:32d7:302::10
   uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
   alterId: 0
@@ -138,7 +153,7 @@ proxies:
   ws-opts:
     path: ''
     headers: {}
-- name: 节点10
+- name: 节点11
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -151,14 +166,14 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip19.9447609.xyz
-- name: 节点11
+- name: 节点12
   type: vless
   server: 2001:bc8:32d7:302::14
   uuid: a289c660-1b12-432b-a06c-c2ae469272b0
   port: 37783
   udp: true
   tls: true
-- name: 节点12
+- name: 节点13
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -171,7 +186,7 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点13
+- name: 节点14
   type: hysteria
   server: 45.150.65.154
   port: 47119
@@ -184,7 +199,7 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点14
+- name: 节点15
   type: hysteria
   server: 2001:bc8:32d7:17b::2
   port: 11000
@@ -196,7 +211,7 @@ proxies:
   protocol: udp
   up: 100
   down: 100
-- name: 节点15
+- name: 节点16
   server: 2001:bc8:32d7:302::16
   port: 34997
   type: tuic
@@ -209,7 +224,7 @@ proxies:
   reduce-rtt: true
   udp-relay-mode: native
   congestion-controller: bbr
-- name: 节点16
+- name: 节点17
   type: hysteria2
   server: 2001:bc8:32d7:302::17
   port: 20088
@@ -345,6 +360,7 @@ proxy-groups:
   - 节点14
   - 节点15
   - 节点16
+  - 节点17
 - name: 老司机
   type: url-test
   url: https://www.google.com/generate_204
@@ -379,6 +395,7 @@ proxy-groups:
   - 节点14
   - 节点15
   - 节点16
+  - 节点17
 rules:
 - RULE-SET,private_ip,DIRECT,no-resolve
 - RULE-SET,private_domain,DIRECT

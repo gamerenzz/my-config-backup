@@ -81,6 +81,18 @@ proxies:
     path: /OCrp5Ajs
 - name: Hys1-1.json
   type: hysteria
+  server: 137.175.82.44
+  port: 443
+  auth_str: dongtaiwang.com
+  up: 10 Mbps
+  down: 50 Mbps
+  sni: bing.com
+  alpn:
+  - h3
+  protocol: udp
+  skip-cert-verify: true
+- name: Hys1-2.json
+  type: hysteria
   server: 107.149.207.185
   port: 443
   auth_str: dongtaiwang.com
@@ -208,6 +220,7 @@ proxy-groups:
   - Clash-tuic-3
   - VLESS-Reality-1.json
   - Hys1-1.json
+  - Hys1-2.json
   - Hys1-3.json
   - Extra-visa.com
   - Extra-www.visa.com
@@ -229,6 +242,7 @@ proxy-groups:
   - Clash-tuic-3
   - VLESS-Reality-1.json
   - Hys1-1.json
+  - Hys1-2.json
   - Hys1-3.json
   - Extra-visa.com
   - Extra-www.visa.com
