@@ -91,18 +91,6 @@ proxies:
   - h3
   protocol: udp
   skip-cert-verify: true
-- name: Hys1-2.json
-  type: hysteria
-  server: 107.149.207.185
-  port: 443
-  auth_str: dongtaiwang.com
-  up: 10 Mbps
-  down: 50 Mbps
-  sni: www.bing.com
-  alpn:
-  - h3
-  protocol: udp
-  skip-cert-verify: true
 - name: Hys1-3.json
   type: hysteria
   server: 5.83.129.90
@@ -220,7 +208,6 @@ proxy-groups:
   - Clash-tuic-3
   - VLESS-Reality-1.json
   - Hys1-1.json
-  - Hys1-2.json
   - Hys1-3.json
   - Extra-visa.com
   - Extra-www.visa.com
@@ -242,7 +229,6 @@ proxy-groups:
   - Clash-tuic-3
   - VLESS-Reality-1.json
   - Hys1-1.json
-  - Hys1-2.json
   - Hys1-3.json
   - Extra-visa.com
   - Extra-www.visa.com
