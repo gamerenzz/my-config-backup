@@ -12,18 +12,19 @@ dns:
   - 223.5.5.5
   - 119.29.29.29
 proxies:
-- name: Clash-hysteria-0
-  type: hysteria
-  server: 2a14:7584:d097::a
-  port: 54177
-  auth-str: dongtaiwang.com
+- name: Clash-tuic-0
+  server: ip1.758733.xyz
+  port: 10088
+  type: tuic
+  uuid: 9bbd1f42-7ae7-4239-bd10-a68de95e3295
+  password: dongtaiwang.com
   sni: apple.com
-  skip-cert-verify: true
   alpn:
   - h3
-  protocol: udp
-  up: 11 Mbps
-  down: 55 Mbps
+  request-timeout: 8000
+  udp-relay-mode: native
+  skip-cert-verify: true
+  congestion-controller: bbr
 - name: Clash-tuic-1
   server: 5.178.101.117
   port: 30006
@@ -37,19 +38,18 @@ proxies:
   udp-relay-mode: native
   skip-cert-verify: true
   congestion-controller: bbr
-- name: Clash-tuic-2
-  server: ip1.758733.xyz
-  port: 10088
-  type: tuic
-  uuid: 9bbd1f42-7ae7-4239-bd10-a68de95e3295
-  password: dongtaiwang.com
+- name: Clash-hysteria-2
+  type: hysteria
+  server: 2a14:7584:d097::a
+  port: 54177
+  auth-str: dongtaiwang.com
   sni: apple.com
+  skip-cert-verify: true
   alpn:
   - h3
-  request-timeout: 8000
-  udp-relay-mode: native
-  skip-cert-verify: true
-  congestion-controller: bbr
+  protocol: udp
+  up: 11 Mbps
+  down: 55 Mbps
 - name: Clash-tuic-3
   server: 163.172.116.154
   port: 33887
@@ -202,9 +202,9 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - Clash-hysteria-0
+  - Clash-tuic-0
   - Clash-tuic-1
-  - Clash-tuic-2
+  - Clash-hysteria-2
   - Clash-tuic-3
   - VLESS-Reality-1.json
   - Hys1-1.json
@@ -223,9 +223,9 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - Clash-hysteria-0
+  - Clash-tuic-0
   - Clash-tuic-1
-  - Clash-tuic-2
+  - Clash-hysteria-2
   - Clash-tuic-3
   - VLESS-Reality-1.json
   - Hys1-1.json
