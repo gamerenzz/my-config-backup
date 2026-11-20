@@ -66,6 +66,39 @@ proxies:
   up: 100 Mbps
   down: 100 Mbps
 - name: 节点4
+  type: hysteria2
+  server: 2001:bc8:32d7:17b::9
+  port: '22000'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
+- name: 节点5
+  type: hysteria2
+  server: 2001:bc8:32d7:302::11
+  port: '20088'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: apple.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
+- name: 节点6
+  type: vless
+  server: 2001:bc8:32d7:302::13
+  uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
+  port: 34324
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: dash.cloudflare.com
+  reality-opts:
+    public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
+    short-id: ''
+  client-figerprint: chrome
+- name: 节点7
   type: hysteria
   server: 5.83.129.90
   port: '54177'
@@ -80,27 +113,26 @@ proxies:
     - h3
   recv_window_conn: 57671680
   recv-window: 230686720
-- name: 节点5
-  type: hysteria2
-  server: 2001:bc8:32d7:17b::9
-  port: '22000'
-  password: dongtaiwang.com
-  fast-open: true
-  sni: www.microsoft.com
-  skip-cert-verify: true
-  up: 100 Mbps
-  down: 100 Mbps
-- name: 节点6
-  type: hysteria2
-  server: 2001:bc8:32d7:302::11
-  port: '20088'
-  password: dongtaiwang.com
-  fast-open: true
-  sni: apple.com
-  skip-cert-verify: true
-  up: 100 Mbps
-  down: 100 Mbps
-- name: 节点7
+- name: 节点8
+  type: vmess
+  server: 2001:bc8:32d7:302::10
+  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  alterId: 0
+  port: 44579
+  cipher: auto
+  udp: true
+  network: ws
+  ws-opts:
+    path: ''
+    headers: {}
+- name: 节点9
+  type: vless
+  server: 2001:bc8:32d7:302::14
+  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
+  port: 37783
+  udp: true
+  tls: true
+- name: 节点10
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -113,59 +145,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip29.9447609.xyz
-- name: 节点8
-  type: vless
-  server: 2001:bc8:32d7:302::13
-  uuid: 26c462ba-a90c-4814-9d7c-a629bc0bdb5c
-  port: 34324
-  udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: dash.cloudflare.com
-  reality-opts:
-    public-key: pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M
-    short-id: ''
-  client-figerprint: chrome
-- name: 节点9
-  type: hysteria2
-  server: 2001:bc8:32d7:17b::4
-  port: '22000'
-  password: dongtaiwang.com
-  fast-open: true
-  sni: www.microsoft.com
-  skip-cert-verify: true
-  up: 100 Mbps
-  down: 100 Mbps
-- name: 节点10
-  type: vmess
-  server: 2001:bc8:32d7:302::10
-  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
-  alterId: 0
-  port: 44579
-  cipher: auto
-  udp: true
-  network: ws
-  ws-opts:
-    path: ''
-    headers: {}
 - name: 节点11
-  type: hysteria2
-  server: 2001:bc8:32d7:17b::6
-  port: '22000'
-  password: dongtaiwang.com
-  fast-open: true
-  sni: www.microsoft.com
-  skip-cert-verify: true
-  up: 100 Mbps
-  down: 100 Mbps
-- name: 节点12
-  type: vless
-  server: 2001:bc8:32d7:302::14
-  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
-  port: 37783
-  udp: true
-  tls: true
-- name: 节点13
   type: vmess
   server: 104.21.238.35
   uuid: ee420fda-efb7-48a8-9249-8987e36ebd9e
@@ -178,7 +158,17 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip19.9447609.xyz
-- name: 节点14
+- name: 节点12
+  type: hysteria2
+  server: 2001:bc8:32d7:17b::4
+  port: '22000'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
+- name: 节点13
   type: hysteria
   server: 45.150.65.154
   port: 47119
@@ -191,7 +181,7 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点15
+- name: 节点14
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -204,7 +194,7 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
-- name: 节点16
+- name: 节点15
   type: hysteria
   server: 137.175.82.41
   port: 20022
@@ -217,6 +207,16 @@ proxies:
   skip-cert-verify: true
   alpn:
     - h3
+- name: 节点16
+  type: hysteria2
+  server: 2001:bc8:32d7:17b::6
+  port: '22000'
+  password: dongtaiwang.com
+  fast-open: true
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  up: 100 Mbps
+  down: 100 Mbps
 - name: 节点17
   type: hysteria
   server: 137.175.82.42
@@ -256,6 +256,13 @@ proxies:
   udp-relay-mode: native
   congestion-controller: bbr
 - name: 节点20
+  type: vless
+  server: 2001:bc8:32d7:302::16
+  uuid: a289c660-1b12-432b-a06c-c2ae469272b0
+  port: 37783
+  udp: true
+  tls: true
+- name: 节点21
   type: hysteria2
   server: 2001:bc8:32d7:302::17
   port: 20088
@@ -395,6 +402,7 @@ proxy-groups:
   - 节点18
   - 节点19
   - 节点20
+  - 节点21
 - name: 老司机
   type: url-test
   url: https://www.google.com/generate_204
@@ -433,6 +441,7 @@ proxy-groups:
   - 节点18
   - 节点19
   - 节点20
+  - 节点21
 rules:
 - RULE-SET,private_ip,DIRECT,no-resolve
 - RULE-SET,private_domain,DIRECT
