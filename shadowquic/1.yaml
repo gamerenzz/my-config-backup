@@ -4,10 +4,10 @@ inbound:
 
 outbound:
   type: shadowquic
-  addr: "198.2.214.27:22448"
+  addr: "198.247.0.165:25443"
   username: "dongtaiwang.com"
   password: "dongtaiwang.com"
-  server-name: "www.bing.com"
+  server-name: "www.yahoo.com"
   alpn: ["h3"]
   initial-mtu: 1300
   congestion-control: bbr
